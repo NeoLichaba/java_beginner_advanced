@@ -14,6 +14,6 @@ public class Greeter
     {
         JOptionPane.showMessageDialog(null,
             "Hello, World!", "Greeter", 
-            JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.INFORMATION_MESSAGE); //dot notation used in order to access a class within the JOptionPane library
     }
 }
