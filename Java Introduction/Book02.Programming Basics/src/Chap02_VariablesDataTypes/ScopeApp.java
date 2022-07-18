@@ -18,7 +18,7 @@ public class ScopeApp {
         myMethod();
     }
 
-    public static void myMethod() {
+    public static void myMethod() { //void doesn't return a value
         //y is a local variable - can be accessed only in this code block
         int y;
         y = 10;
