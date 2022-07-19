@@ -1,9 +1,6 @@
 package Chap05_UsingLoops;
 
-/*
- *
- * 
- */
+
 public class CountToTenErrorFixed {
 
     public static void main(String[] args) {
