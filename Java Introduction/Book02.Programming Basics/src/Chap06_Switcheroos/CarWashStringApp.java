@@ -3,6 +3,8 @@ package Chap06_Switcheroos;
 
 import java.util.Scanner;
 
+/* In this program, string codes are evaluated as opposed to using letters/characters*/
+
 public class CarWashStringApp
 {
     static Scanner sc = new Scanner(System.in);
@@ -15,7 +17,7 @@ public class CarWashStringApp
 
         String details = "";
 
-        switch (s.toUpperCase())
+        switch (s.toUpperCase())                                                //user input converted to uppercase before being tested against string constants
         {
             case "PRESIDENTIAL":
                 details += "\tNew Car Scent, plus . . . \n";
@@ -29,7 +31,7 @@ public class CarWashStringApp
                 details += "\tWash, vacuum, and hand dry.\n";
                 break;
             default:
-                details = "That�s not one of the codes.";
+                details = "That's not one of the codes.";
                 break;
         }
         System.out.println("\nThat package includes:\n");

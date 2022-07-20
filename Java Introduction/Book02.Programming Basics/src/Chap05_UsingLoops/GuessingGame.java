@@ -6,7 +6,7 @@ import java.util.Scanner;
  */
 public class GuessingGame {
 
-    static Scanner sc = new Scanner(System.in);
+    static Scanner sc = new Scanner(System.in);                             
 
     public static void main(String[] args) {
         boolean keepPlaying = true;                                         //boolean defined and initialised to true and changes to false when user indicates wanting to stop playing
@@ -29,12 +29,12 @@ public class GuessingGame {
                             + "Try again: ");
                     validInput = false;                                     //
                 }
-            } while (!validInput);
+            } while (!validInput);                                              
             // Check the guess
             if (guess == number) {
                 System.out.println("You�re right!");
             } else {
-                System.out.println("You�re wrong! "
+                System.out.println("You're wrong! "
                         + "The number was " + number);
             }
             // Play again?
@@ -47,7 +47,7 @@ public class GuessingGame {
                 } else {
                     validInput = false;                             //validInput set to false if user no longer wanting to play
                 }
-            } while (!validInput);
+            } while (!validInput);                                  
         }
         System.out.println("\nThank you for playing!");
     }
