@@ -5,6 +5,8 @@ import com.example.domain.Engineer;
 
 import java.text.NumberFormat;
 
+/*Program seeks to cast object references and invoke appropriate methods*/
+
 public class EmployeeTest {
 
     public static void main(String[] args) {
@@ -14,13 +16,13 @@ public class EmployeeTest {
         Employee emp = new Employee(13, "Lionel Power", "099-90-6789", 67_990.90);
         Engineer obj = new Engineer(102, "Robert Stock", "012-54-7812", 220_345.27);
 
-        obj.engineerMethod();
+        eng.engineerMethod();
         printEmployee(obj);
 
-        Engineer engobj = new Employee(1, "Brenda Wills", "013-78-5678", 221_500.00);
+        Engineer engobj = new Engineer(1, "Brenda Wills", "013-78-5678", 221_500.00);
         printEmployee(engobj);
 
-        String s = (String) emp;
+//        String s = (String) emp;
 
     }
 
