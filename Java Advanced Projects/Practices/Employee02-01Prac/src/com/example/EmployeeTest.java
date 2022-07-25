@@ -1,10 +1,6 @@
 
 package com.example;
 
-/*
- *
- * 
- */
 
 import com.example.domain.Employee;
 
@@ -14,7 +10,7 @@ public class EmployeeTest {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // Instance off Employee class created
+        // Instance of Employee class created
         
         Employee emp = new Employee();
         

@@ -1,10 +1,15 @@
 package com.example.domain;
 
-/**
- *
- *
- */
+
 public class Employee {
+
+    private int empId;
+    private String name;
+    private String ssn;
+    private double salary;
+
+    public Employee() {
+    }
 
     /**
      * @return the empId
@@ -60,14 +65,6 @@ public class Employee {
      */
     public void setSalary(double salary) {
         this.salary = salary;
-    }
-
-    private int empId;
-    private String name;
-    private String ssn;
-    private double salary;
-
-    public Employee() {
     }
 
 }
