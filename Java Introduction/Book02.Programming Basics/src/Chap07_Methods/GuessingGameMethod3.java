@@ -12,7 +12,7 @@ public class GuessingGameMethod3
    static Scanner sc = new Scanner(System.in);
    public static void main(String[] args)
    {
-      System.out.println("Let�s play a guessing game!");
+      System.out.println("Let's play a guessing game!");
       do
       {
           playARound(1, getRandomNumber(7, 12));                        //playAround calls to play a round of the game
@@ -29,16 +29,16 @@ public class GuessingGameMethod3
       // Pick a random number - range for the random numbers is set
       number = getRandomNumber(min, max);	
       // Get the guess - computer communicates random numbers chosen within a particular range (min and max)
-      System.out.println("\nI�m thinking of a number "
+      System.out.println("\nI'm thinking of a number "
           + "between " + min + " and " + max + ".");	
       System.out.print("What do you think it is? ");
       guess = getGuess(min, max);                                       //call to getGuess method, passes range of acceptable guesses
 
       // Check the guess
       if (guess == number)
-          System.out.println("You�re right!");
+          System.out.println("You're right!");
       else
-          System.out.println("You�re wrong!"
+          System.out.println("You're wrong!"
               + " The number was " + number);
    }
    public static int getRandomNumber(int min, int max)                      //method returns number between min and max passed into parameters
@@ -50,7 +50,7 @@ public class GuessingGameMethod3
    {
       while (true)
       {
-          int guess = sc.nextInt();
+          int guess = sc.nextInt();                                         //scanner class method, stores user input and converts into int
           if ( (guess < min) || (guess > max) )                             //conditions to be met within the min and max ranges
           {
               System.out.print("I said, between "

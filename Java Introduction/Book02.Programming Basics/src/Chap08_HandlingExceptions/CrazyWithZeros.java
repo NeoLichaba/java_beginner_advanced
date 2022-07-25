@@ -1,14 +1,16 @@
 package Chap08_HandlingExceptions;
 
-/**
+/*
  *
- * @author User
+ * 
  */
 public class CrazyWithZeros {
 
     public static void main(String[] args) {
         try {
-            int answer = divideTheseNumbers(5, 0);                              //divideTheseNumbers method called, 5 and 0 passed as parameters
+            int x = 5;
+            int y = 0;
+            int answer = divideTheseNumbers(x, y);                              //divideTheseNumbers method called, 5 and 0 passed as parameters
         } catch (Exception e)                                                   //any exceptions from previous method are called
         {
             System.out.println("Tried twice, "
@@ -16,9 +18,10 @@ public class CrazyWithZeros {
         }
     }
 
-    public static int divideTheseNumbers(int a, int b)                          //divideTheseNumbers declared
+    public static int divideTheseNumbers(int a, int b)                          //divideTheseNumbers method receives values from calling (main) method
             throws Exception {                                                  //throws clause specified highlighting method not wanting to handle the exception
                                                                                 //AKA catch-or-throw rule
+                                                                                
         int c;
         try {
             c = a / b;                                                          //numbers divided

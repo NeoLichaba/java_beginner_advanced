@@ -3,17 +3,17 @@ package Chap07_Methods;
 
 import java.util.Scanner;
 
-/* Program seeks to simplify the Guessing Game through placing the body of the main method in a separate method
+/* Program seeks to simplify the Guessing Game through placing the body of the main method in a separate method 
  * Invoked in the playAround method
 */
 
 public class GuessingGameMethod
 {
-   static Scanner sc = new Scanner(System.in);
+   static Scanner sc = new Scanner(System.in);                                  //user input; constructor method instantiated 
    static boolean keepPlaying = true;                                           //keepPlaying variable created as a class variable (using keyword static) so accessible by main and playAround method(s)
    public static void main(String[] args)
    {
-      System.out.println("Let�s play a guessing game!");
+      System.out.println("Let's play a guessing game!");
 
       while (keepPlaying)                                                       	
       {
@@ -23,13 +23,13 @@ public class GuessingGameMethod
    }
    public static void playARound()                                              //static method so it can be called on by the main method	
    {
-      boolean validInput;
+      boolean validInput;                                                       //
       int number, guess;
       String answer;
 
       // Pick a random number
       number = (int)(Math.random() * 10) + 1;
-      System.out.println("\nI�m thinking of a number "
+      System.out.println("\nI'm thinking of a number "
           + "between 1 and 10.");
 
       // Get the guess
@@ -44,25 +44,26 @@ public class GuessingGameMethod
                   + "and 10. Try again: ");
               validInput = false;
           }
-      } while (!validInput);
+      } while (!validInput);                                                //will continuosly run until validInput is true
 
       // Check the guess
       if (guess == number)
-          System.out.println("You�re right!");
+          System.out.println("You're right!");
       else
-          System.out.println("You�re wrong!"
+          System.out.println("You're wrong!"
               + " The number was " + number);
+      
       // Play again?
       do
       {
           System.out.print("\nPlay again? (Y or N)");
-          answer = sc.next();
+          answer = sc.next();                                               //next method takes in a string                                        
           validInput = true;
-          if (answer.equalsIgnoreCase("Y"));
+          if (answer.equalsIgnoreCase("Y"));                                //single statement. Remainder of code won't be executed
           else if (answer.equalsIgnoreCase("N"))
               keepPlaying = false;	
           else
               validInput = false;
-      } while (!validInput);
+      } while (!validInput);            
    }
 }
