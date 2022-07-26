@@ -23,7 +23,6 @@ public class EmployeeTest {
         EmployeeStockPlan esp = new EmployeeStockPlan();
 
         printEmployee(eng, esp);
-
         printEmployee(adm, esp);
         printEmployee(mgr, esp);
         printEmployee(dir, esp);

@@ -5,7 +5,9 @@ import com.example.domain.Engineer;
 
 import java.text.NumberFormat;
 
-/*Program seeks to cast object references and invoke appropriate methods*/
+/*Program seeks to cast object references and invoke appropriate methods
+ *  
+ */
 
 public class EmployeeTest {
 
@@ -18,7 +20,8 @@ public class EmployeeTest {
 
         eng.engineerMethod();
         printEmployee(obj);
-
+        
+        //downcast parent object Employee to child object Engineer
         Engineer engobj = new Engineer(1, "Brenda Wills", "013-78-5678", 221_500.00);
         printEmployee(engobj);
 
@@ -35,4 +38,5 @@ public class EmployeeTest {
         System.out.println("Employee Soc Sec #:  " + emp.getSsn());
         System.out.println("Employee salary:     " + NumberFormat.getCurrencyInstance().format((double) emp.getSalary()));
     }
+
 }
