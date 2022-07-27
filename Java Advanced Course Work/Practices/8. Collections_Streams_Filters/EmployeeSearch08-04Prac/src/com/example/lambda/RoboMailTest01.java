@@ -1,7 +1,6 @@
 package com.example.lambda;
 
 import java.util.List;
-import java.util.function.Predicate;
 
 /**
  * 
@@ -13,14 +12,16 @@ public class RoboMailTest01 {
     
     List<Employee> pl = Employee.createShortList();
     RoboMail01 robo = new RoboMail01();
-        
-    System.out.println("\n==== RoboMail 01");    
-    System.out.println("\n=== All Sales 50+");
+
+   
+    System.out.println("\n==== RoboMail 01");
+    System.out.println("\n=== Male Eng Under 65");
     
-    // Print sales employees 50+
+    // Mail mail, Eng employees < 65
     pl.stream()
-            .filter(p -> p.getAge()>=50)
-            .filter(p -> p.getDept().equals("Sales"))
+            .filter(p -> p.getAge()<65)
+            .filter(p -> p.getDept().equals("Eng"))
+            .filter(p -> p.getGender().equals(Gender.MALE))
             .forEach(p -> robo.roboMail(p));
 
   }
