@@ -5,7 +5,7 @@ import java.util.function.Predicate;
 
 /**
  *
- * @author MikeW
+ * 
  * 
  */
 public class RoboMail01 {

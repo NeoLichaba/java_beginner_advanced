@@ -2,7 +2,7 @@ package com.example.lambda;
 
 /**
  *
- * @author MikeW
+ * 
  */
 public class Main {
 
