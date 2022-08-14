@@ -1,29 +1,37 @@
 package Chap05_AbstractClasses_Interfaces;
 
-import java.awt.event.*;
+import java.awt.event.*;                                                        
 
 import javax.swing.*;
+
+/* Program demonstrates common use of callbacks by using the Timer class, a part of the swing package
+ * Swing - event listeners are created that handle user-interface events 
+ * Timer class implements basic timer that generates events at regular intervals
+*/
 
 public class TickTock {
 
     public static void main(String[] args) {
         // create a timer that calls the Ticker class
         // at one second intervals
-        Timer t = new Timer(1000, new Ticker());                                    //new Timer object created; new instance of Ticker class passed in second parameter
-        t.start();                                                           //start method called to kick timer into action
+        Timer t = new Timer(1000, new Ticker());                                //new Timer object created; new instance of Ticker (listener object) class passed in second parameter
+        t.start();                                                              //start method (which is in the Timer class) called to kick timer into action
         // display a message box to prevent the
         // program from ending immediately
         JOptionPane.showMessageDialog(null,
-                "Click OK to exit program");                                               //user given the option to end program using JOptionPane class
+                "Click OK to exit program");                                    //user given the option to end program using JOptionPane class
     }
 }
 
-class Ticker implements ActionListener //Ticker class implements ActionListener interface
+class Ticker implements ActionListener                                          //Ticker class/object created implements ActionListener interface
+                                                                                //ActionListener event defined in .event package
 {
 
-    private boolean tick = true;                                         //Keeps track of whether Ticker displays Tick or Tock
+    private boolean tick = true;                                                //Keeps track of whether Ticker displays Tick or Tock
 
-    public void actionPerformed(ActionEvent event) //Called at each timer interval
+    @Override
+    public void actionPerformed(ActionEvent event)                              //actionPerformed method called at each timer interval
+                                                                                //ActionEvent received
     {
         if (tick) {
             System.out.println("Tick...");
