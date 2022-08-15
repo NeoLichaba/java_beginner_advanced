@@ -4,9 +4,10 @@ import java.awt.event.*;
 
 import javax.swing.*;
 
-/* Program demonstrates common use of callbacks by using the Timer class, a part of the swing package
- * Swing - event listeners are created that handle user-interface events 
- * Timer class implements basic timer that generates events at regular intervals
+/*
+'* Program demonstrates common use of callbacks by using the Timer class, a part of the swing package
+ * Swing - event listeners (first object) are created that handle user-interface events (event source/second objects - (i.e could be through a click of the mouse))
+ * Timer class implements basic timer that generates events at regular intervals 
 */
 
 public class TickTock {
@@ -15,7 +16,8 @@ public class TickTock {
         // create a timer that calls the Ticker class
         // at one second intervals
         Timer t = new Timer(1000, new Ticker());                                //new Timer object created; new instance of Ticker (listener object) class passed in second parameter
-        t.start();                                                              //start method (which is in the Timer class) called to kick timer into action
+                                                                                //int value represents how often timer event will occur
+        t.start();                                                              //start method, part of the API (which is in the Timer class) called to kick timer into action
         // display a message box to prevent the
         // program from ending immediately
         JOptionPane.showMessageDialog(null,
@@ -31,7 +33,7 @@ class Ticker implements ActionListener                                          
 
     @Override
     public void actionPerformed(ActionEvent event)                              //actionPerformed method called at each timer interval
-                                                                                //ActionEvent received
+                                                                                //ActionEvent received - user-interface event
     {
         if (tick) {
             System.out.println("Tick...");

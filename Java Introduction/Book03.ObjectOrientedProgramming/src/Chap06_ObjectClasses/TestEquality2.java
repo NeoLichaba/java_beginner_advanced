@@ -8,10 +8,10 @@ public class TestEquality2 {
 
     public static void main(String[] args) {
         Employee emp1 = new Employee(
-                "Martinez", "Anthony");                                                    //Employee object created with name Anthony Martinez
+                "Martinez", "Anthony");                                         //Employee object created with name Anthony Martinez
         Employee emp2 = new Employee(
-                "Martinez", "Anthony");                                                    //Employee object created with name Anthony Martinez                              
-        if (emp1.equals(emp2)) //Compares the 2 employee objects by using the equals method
+                "Martinez", "Anthony");                                         //Employee object created with name Anthony Martinez                              
+        if (emp1.equals(emp2))                                                  //Compares the 2 employee objects by using the equals method
         {
             System.out.println(
                     "These employees are the same.");

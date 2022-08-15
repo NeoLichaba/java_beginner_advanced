@@ -11,15 +11,17 @@ package Chap05_AbstractClasses_Interfaces;
  * Interface fields are assumed to be static, final and public
  * Superinterface - parent interface
  * Subinterface - child interface
+ * Using interfaces: Create, implement, 
  * Page300
  */
 public interface Playable {                                                     //interface is public and thus accessible 
                                                                                 //by other classes
+                                                                                // 1. Creating interface
         void play();
     
 
 
-    public class TicTacToe implements Playable {
+    public class TicTacToe implements Playable {                                // 2. Implementing interface
         // additional fields and methods go here
 
         public void play() {                                                    
