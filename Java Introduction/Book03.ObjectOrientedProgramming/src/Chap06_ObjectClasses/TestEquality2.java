@@ -1,7 +1,7 @@
 package Chap06_ObjectClasses;
 
-/**
- *
+/* Program makes use of equal method vs. equals operator for comparison
+ * 
  *
  */
 public class TestEquality2 {
@@ -22,7 +22,7 @@ public class TestEquality2 {
     }
 }
 
-class Employee //Employee class
+class Employee                                                                  //Employee class
 {
 
     private String lastName;
@@ -42,20 +42,20 @@ class Employee //Employee class
     }
 
     @Override
-    public boolean equals(Object obj) //Overridden equals method
+    public boolean equals(Object obj)                                           //Overridden equals method; must override to have an effect
     {
-        // an object must equal itself
-        if (this == obj) {
-            return true;                                                              //Returns true if same instance objects are being compared; first equality test done
-        } // no object equals null
-        if (this == null) {
-            return false;                                                             //Returns false if object being compared is null; last equality test - nothing is equal to null
-        } // objects of different types are never equal
-        if (this.getClass() != obj.getClass()) {
-            return false;                                                             //Returns false if object being compared isn't of the correct type - symmetry test
+        
+        if (this == obj) {                                                      // an object must equal itself
+            return true;                                                        //Returns true if same instance objects are being compared; first equality test done (Reflexive rule)
+        } 
+        if (this == null) {                                                     // no object equals 
+            return false;                                                       //Returns false if object being compared is null; last equality test - nothing is equal to null (non null rule)
+        } 
+        if (this.getClass() != obj.getClass()) {                                // objects of different types are never equal - using getClass method
+            return false;                                                       //Returns false if object being compared isn't of the correct type - symmetry rule
         } // cast to an Employee, then compare the fields
-        Employee emp = (Employee) obj;                                            //Other object casted - comparing 2 different Employee objects 
-        return this.lastName.equals(emp.getLastName())                            //Two fields are compared - lastName and FirstaName
-                && this.firstName.equals(emp.getFirstName());
+        Employee emp = (Employee) obj;                                          //Other object casted - comparing 2 different Employee objects 
+        return this.lastName.equals(emp.getLastName())                          //Two fields are compared - lastName and FirstaName
+                && this.firstName.equals(emp.getFirstName());                   //To compare strings, best to compare using equals method, int = equal operator
     }
 }

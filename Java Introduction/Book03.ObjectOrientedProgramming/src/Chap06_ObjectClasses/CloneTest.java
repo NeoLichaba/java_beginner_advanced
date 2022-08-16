@@ -1,7 +1,8 @@
+
 package Chap06_ObjectClasses;
 
-/**
- *
+/** Program demonstrates implementation of the clone method
+ * 
  *
  */
 public class CloneTest {
@@ -59,7 +60,7 @@ class Employee {
         Employee emp;
         emp = new Employee(                                                     //New employee object using first and last name from current object
                 this.lastName, this.firstName);
-        emp.setSalary(this.salary);                                             //New employee salary set to curren't object's salary
+        emp.setSalary(this.salary);                                             //New employee salary set to current object's salary
         return emp;                                                             //Returns cloned Employee object
     }
 

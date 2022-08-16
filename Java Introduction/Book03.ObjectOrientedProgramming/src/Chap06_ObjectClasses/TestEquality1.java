@@ -1,6 +1,6 @@
 package Chap06_ObjectClasses;
 
-/* Program demonstrates the equals Method
+/* Program demonstrates the equals Method vs. equals Operator
  * 
  *
  */
@@ -22,12 +22,12 @@ public class TestEquality1 {
     }
 }
 
-class Employee {
+class Employee {                                                                //Employee class created with the following properties
 
     private String lastName;
     private String firstName;
 
-    public Employee(String lastName, String firstName) {
+    public Employee(String lastName, String firstName) {                        //Constructor class created
         this.lastName = lastName;
         this.firstName = firstName;
     }

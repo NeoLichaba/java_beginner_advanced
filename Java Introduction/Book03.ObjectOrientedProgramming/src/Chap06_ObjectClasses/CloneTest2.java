@@ -1,12 +1,12 @@
 package Chap06_ObjectClasses;
 
-/**
- *
- * @author User
+/* Program demonstrates creation of deep copies 
+ * All fields od original objects are copied exactly
+ * 
  */
 public class CloneTest2 {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) {                                    //Cloneable interface created within main method
         Employee emp1 = new Employee(
                 "Martinez", "Anthony");                                          //Anthony Martinez employee created    
         emp1.setSalary(40000.0);
@@ -39,15 +39,15 @@ public class CloneTest2 {
 }
 
 class Employee implements Cloneable                                             //Employee class implements Cloenable interface
-{
+{                                                                               //Following properties are displayed in Employee class
 
-    private String lastName;
+    private String lastName;                                        
     private String firstName;
     private Double salary;
-    public Address address;                                                     //Address field hols an object of typeAddress
+    public Address address;                                                     //Address field holds an object of type Address
 
-    public Employee(String lastName, String firstName) {
-        this.lastName = lastName;
+    public Employee(String lastName, String firstName) {                        //Constructor for Employee class created to create
+        this.lastName = lastName;                                               //object of employee (ref. toString method) 
         this.firstName = firstName;
         this.address = new Address();
     }
@@ -76,31 +76,37 @@ class Employee implements Cloneable                                             
         this.salary = salary;
     }
 
-    public Object clone()                                                       //Clone method in employee class
+    @Override                                                                   //Override clone method otherwise unable to clone object 
+    public Object clone()                                                       //Clone method in employee class 
     {
         Employee emp;
         try {
-            emp = (Employee) super.clone();                                     //shallow copy created of Employee object created
+            emp = (Employee) super.clone();                                     //shallow copy created of Employee object created - noted from keyword super; typecasted to Employee
+                                                                                //Copy of lastName, firstName and salary created
             emp.address = (Address) address.clone();                            //shallow copy of Address object created and assigns it to address field of cloned Employee object
+                                                                                //Create new object of Address object
+                                                                                //Both create deep cloning methods - second version is independent of the original version you're wanting to perform  
         } catch (CloneNotSupportedException e)                                  //Catches exception - class implements Cloneable thus won't happen
+                                                                                //CloneNotSupportedException is a checked exception and thus must be caught    
         {
-            return null; // will never happen
+            return null;                                                        // will never happen
         }
         return emp;                                                             //Returns cloned employee object
     }
 
-    public String toString() {
+    @Override                                                                   //Always override toString method in respective class to return string representation
+    public String toString() {                                                  //Prints out Employee class properties
         return this.getClass().getName() + "["
                 + this.firstName + " "
                 + this.lastName + ", "
-                + this.salary + "]";
+                 + this.salary + "]";
     }
 }
 
-class Address implements Cloneable                                              //Address class implements Cloneable
+class Address implements Cloneable                                              //Address class implements Cloneable interface - market interface
 {
 
-    private String street;
+    private String street;                                                      //Address properties
     private String city;
     private String state;
     private String zipCode;
@@ -120,6 +126,7 @@ class Address implements Cloneable                                              
         this.zipCode = zipCode;
     }
 
+    @Override                                                                   //Clone method of interface to be overriden otherwise unable to clone it
     public Object clone()                                                       //Clone method of Address class
     {
         try {
@@ -129,7 +136,7 @@ class Address implements Cloneable                                              
         }
     }
 
-    public String getAddress() {
+    public String getAddress() {                                                //
         return this.street + "\n"
                 + this.city + ", "
                 + this.state + " "
