@@ -3,7 +3,7 @@ package com.example.domain;
 
 /**
  *
- * @author User
+ * 
  */
 public class Engineer extends Employee {
     

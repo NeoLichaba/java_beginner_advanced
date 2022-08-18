@@ -7,11 +7,11 @@ package Chap06_ObjectClasses;
 public class TestEquality1 {
 
     public static void main(String[] args) {
-        Employee emp1 = new Employee(                                           //2 Employee objects are created with identical data
+        Employee emp1 = new Employee(                                           //2 Employee objects are created with identical data but considered to be different objects 
                 "Martinez", "Anthony");
         Employee emp2 = new Employee(
                 "Martinez", "Anthony");
-        if (emp1 == emp2) {                                                     //Compares the data of the 2 object references, NOT the actual data
+        if (emp1 == emp2) {                                                     //Equals operator tests to see if referencing the exact same object
             System.out.println(
                     "These employees are the same.");                           //Only return true if both objects refer to the same instance of the Employee class
                                                                                 //To return true, make use of equals method than equal operator

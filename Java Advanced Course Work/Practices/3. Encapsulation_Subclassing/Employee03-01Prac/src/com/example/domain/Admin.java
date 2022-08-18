@@ -2,7 +2,7 @@ package com.example.domain;
 
 /**
  *
- * @author User
+ * 
  */
 public class Admin extends Employee {
 

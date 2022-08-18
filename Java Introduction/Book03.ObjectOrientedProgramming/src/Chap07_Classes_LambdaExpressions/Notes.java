@@ -50,6 +50,20 @@ Lambda Expressions
 -------------------------------------------------------------
  * Lambda expressions lets you create an anon class that implements a functional interface
  * Make use of arrow operator
+ * Used as arguments for another method
+    * Has:
+        >> Parameters - left to the arrow token
+            (e.g myList.replaceAll((String s) -> { >>Method body 
+                return s.toUpperCase();
+            }
+        );
+        >> Method body 
+        >> Return value
+ * Recognised by the -> 
+
+    Enhanced APIs that use Lambda
+        >>Util
+
 
     * 
  */

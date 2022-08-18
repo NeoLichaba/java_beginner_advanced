@@ -22,13 +22,13 @@ public class TestEquality2 {
     }
 }
 
-class Employee                                                                  //Employee class
+class Employee                                                                  //Employee class with the following private properties
 {
 
     private String lastName;
     private String firstName;
 
-    public Employee(String lastName, String firstName) {
+    public Employee(String lastName, String firstName) {                        //Constructor created
         this.lastName = lastName;
         this.firstName = firstName;
     }
@@ -43,6 +43,7 @@ class Employee                                                                  
 
     @Override
     public boolean equals(Object obj)                                           //Overridden equals method; must override to have an effect
+                                                                                //Comes from the object class
     {
         
         if (this == obj) {                                                      // an object must equal itself
@@ -57,5 +58,5 @@ class Employee                                                                  
         Employee emp = (Employee) obj;                                          //Other object casted - comparing 2 different Employee objects 
         return this.lastName.equals(emp.getLastName())                          //Two fields are compared - lastName and FirstaName
                 && this.firstName.equals(emp.getFirstName());                   //To compare strings, best to compare using equals method, int = equal operator
-    }
+    }                                                                           //return true if details (lastName and firstName) are the same;
 }
