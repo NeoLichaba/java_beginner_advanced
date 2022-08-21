@@ -38,6 +38,7 @@ public class TickTockInner {
 
         private boolean tick = true;
 
+        @Override
         public void actionPerformed(ActionEvent event) //actionPerformed method called every 1 second
         {
             if (tick) {

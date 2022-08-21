@@ -24,7 +24,7 @@ public class TickTockAnonymous {
         // create a timer that calls the Ticker class
         // at one second intervals
         Timer t = new Timer(1000, //Instance of timer class created
-                new ActionListener() //Seco
+                new ActionListener() //Second parameter creates a new instance of event listener
         {                                                                       //beginning of body of the anonymous class        
                                                                                 
  private boolean tick = true;

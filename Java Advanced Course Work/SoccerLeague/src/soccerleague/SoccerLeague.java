@@ -15,6 +15,8 @@ public class SoccerLeague {
     public static void main(String[] args)
         throws IOException
     {
+        
+        
         // list that holds strings of a file
         List<String> listOfStrings
             = new ArrayList<>();
@@ -42,7 +44,9 @@ public class SoccerLeague {
         // printing each line of file
         // which is stored in array
         for (String str : array) {
-            System.out.println(str);
+            System.out.println(str(0));
+            
+         
         }
     }
 }

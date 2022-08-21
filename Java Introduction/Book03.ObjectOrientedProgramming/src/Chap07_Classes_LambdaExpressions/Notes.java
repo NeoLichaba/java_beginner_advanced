@@ -21,7 +21,7 @@ Understanding inner class (refer to TickTockInner listing)
 ------------------------------------------------------------
     * Inner class automatically has access to fields and methods of outer class - even to private fields and methods
     * Has access to instance data for outer class
-    * Create a class that's only of interest to outler class
+    * Create a class that's only of interest to outer class
     * Code in inner class is to refer to instance of outer class. List name of outer class followed by dot operator and this
         > MyOuterClass.this - refer to instance of outer class
 
@@ -32,6 +32,7 @@ Understanding inner class (refer to TickTockInner listing)
     * Useful when creating objects that interact with one another when changes occur
     * Observable object - object whose changes are being monitored
     * Observer object - object monitoring changes
+ `  * Part of Observable and Observer interfaces
 
 Using Static Inner Classes (refer to TickTockStatic listing)
 -------------------------------------------------------------
@@ -62,8 +63,13 @@ Lambda Expressions
  * Recognised by the -> 
 
     Enhanced APIs that use Lambda
-        >>Util
-
+        >>Util.functions - target types for lambda expressions
+        >>Util.stream - provides classes that suppport ops on streams of values
+        >>util - includes List and ArrayList
+ * Lambda type specifies the type of expression a method is expecting
+ * UnaryOperator Lambda Type - single input and returns a value of the same type as input. MUST return the same type
+    .e.g myList.replaceAll(s -> s.toUpperCase());
+ *Predicate Lambda Type - takes a single input argument and returns a boolean
 
     * 
  */
