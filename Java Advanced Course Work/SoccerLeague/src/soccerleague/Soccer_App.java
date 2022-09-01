@@ -57,11 +57,10 @@ public class Soccer_App {
 
         scoreboard.entrySet()                                                               //entrySet() method used to print all mappings of LinkedHashMap                                          
                 .stream()
-                //.sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))              //sorted() method used taking on Comparator as a parameter, combined with comparing method
-                .sorted(Map.Entry.comparingByKey())
-                .forEachOrdered(x -> reverseSortedMap.put(x.getKey(), x.getValue()));       //reverseSortedMap() method used, sorting by object key and value of the key
-        System.out.println("Scoreboard: " + scoreboard);                                    //mapped scoreboard printed
-        System.out.println("Ranking: " + reverseSortedMap);                                 
+                .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))              //sorted() method used taking on Comparator as a parameter, combined with comparing method. Iterates over integer values
+                .forEachOrdered(x -> reverseSortedMap.put(x.getKey(), x.getValue()));       //forEachOrdered() method, iterates over values in HashMap, sorting by object key and value of the key
+        System.out.println("Scoreboard: " + "\n" + scoreboard);                                    //mapped scoreboard printed
+        System.out.println("Ranking: " + "\n" + reverseSortedMap + "\n");                                 //scoreboard printed in order of rank                      
         
     }
 }   
