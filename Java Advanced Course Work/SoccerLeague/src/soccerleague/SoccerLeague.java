@@ -44,9 +44,8 @@ public class SoccerLeague {
         // printing each line of file
         // which is stored in array
         for (String str : array) {
-            System.out.println(str(0));
-            
+            System.out.println(str);            
          
         }
-    }
+    } 
 }

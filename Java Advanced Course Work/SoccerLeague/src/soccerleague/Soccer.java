@@ -64,7 +64,18 @@ public class Soccer {
 				// put name, number in HashMap if they are
 				// not empty
 				if (!name.equals("") && !number.equals(""))
-					map.put(name, number);
+                                        map.put(name,name);
+					/*map.put("Tarantulas2", "1");
+                                        map.put("FCAwesome","0");
+                                        map.put("Tarantulas2", "3");
+                                        map.put("ManchesterUnited", "1");
+                                        map.put("Lions", "4");
+                                        map.put("Grouches", "0");
+                                        map.put("Liverpool", "3");
+                                        map.put("ManchesterUnited", "3");
+                                        map.put("Lions", "1");
+                                        map.put("FCAwesome","1");*/
+                                        
 			}
 		}
 		catch (Exception e) {
