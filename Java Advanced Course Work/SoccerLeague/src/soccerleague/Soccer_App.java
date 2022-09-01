@@ -41,6 +41,7 @@ public class Soccer_App {
 
             if (score1 > score2) {
                 scoreboard.put(team1, scoreboard.getOrDefault(team1, leagueTotal) + 3);
+                scoreboard.put(team2, scoreboard.getOrDefault(team2, leagueTotal) + 0);
             } else if (score1 < score2) {
                 scoreboard.put(team2, scoreboard.getOrDefault(team2, leagueTotal) + 3);
             } else {
@@ -50,20 +51,6 @@ public class Soccer_App {
 
         }
 
-
-        /*if (score1 > score2) {
-
-                scoreboard.put(team1, scoreboard.getOrDefault(team1, leagueTotal) + 3);
-
-            } else if (score1 < score2) {
-
-
-                scoreboard.put(team2, scoreboard.getOrDefault(team2, leagueTotal) + 3);
-            } else { // draw
-
-                scoreboard.put(team1, scoreboard.getOrDefault(team1, leagueTotal) + 1);
-                scoreboard.put(team2, scoreboard.getOrDefault(team2, leagueTotal) + 1);
-            }*/
         LinkedHashMap<String, Integer> reverseSortedMap = new LinkedHashMap<>();
 
         scoreboard.entrySet()
@@ -71,8 +58,12 @@ public class Soccer_App {
                 .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
                 //                .sorted(Map.Entry.comparingByKey())
                 .forEachOrdered(x -> reverseSortedMap.put(x.getKey(), x.getValue()));
-
+        System.out.println("Scoreboard: " + scoreboard);
         System.out.println("Rankings: " + reverseSortedMap);
+        
+        
+        
+        
 
         /* if (!scoreboard.containsKey(team1)) {                               // if the team already exists
                 scoreboard.put(team1, 0);                                       // Team's first match - so  league score
@@ -93,16 +84,6 @@ public class Soccer_App {
                 scoreboard.put(team2, scoreboard.get(team2) + 1);
             }
         }*/
-        System.out.println("Scoreboard: " + scoreboard);
+        
     }
-
-//    public static HashMap<String, Integer> sortByValue(HashMap<> scoreboard) {
-//        
-//    
-//        List<Map.Entry<String, Integer>> list = new LinkedList<Map.Entry<String, >>(scoreboard.entrySet());
-//        
-//        Collections.sort(list,
-//                (l1,
-//                 l2) -> l1.getValue().compareTo(l2.getValue));
-}
 }
