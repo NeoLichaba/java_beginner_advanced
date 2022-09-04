@@ -1,4 +1,4 @@
-package book04.stringsarrayscollections;
+package Chap01_WorkingWithStrings;
 
 import java.util.Scanner;
 

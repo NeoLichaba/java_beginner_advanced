@@ -1,5 +1,5 @@
 
-package book04.stringsarrayscollections;
+package Chap01_WorkingWithStrings;
 
 /* Strings are reference types, not value/primitive types
  * Java allows you to assign string literals to string variables
