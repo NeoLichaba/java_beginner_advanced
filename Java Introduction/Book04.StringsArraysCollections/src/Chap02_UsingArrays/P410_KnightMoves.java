@@ -12,8 +12,8 @@ public class P410_KnightMoves {
     // the following static array represents the 8
     // possible moves a knight can make
     // this is an 8 x 2 array
-    static int[][] moves = {{-2, +1}, //→10
-    {-1, +2},
+    static int[][] moves = {{-2, +1}, //→10                                     2D array moves declared and initialised with a combination of moves; possible values stores x and y
+    {-1, +2},                                                                   //8 possible moves available - 8 rows, 2 columns
     {+1, +2},
     {+2, +1},
     {+2, -1},
@@ -24,46 +24,47 @@ public class P410_KnightMoves {
     public static void main(String[] args) {
         System.out.println("Welcome to the "
                 + "Knight Move calculator.\n");
-        do {
-            showKnightMoves(); //→26
-        } while (getYorN("Do it again?"));
+        do {                                                                    //do - while loop, will keep looping until the user enters N
+            showKnightMoves(); //→26                                            //Starter position - call on the showKnightMoves method
+        } while (getYorN("Do it again?"));                                      //getYorN method is called
     }
 
-    public static void showKnightMoves() //→31
+    public static void showKnightMoves() //→31                                  //showKnightMoves() method begins
     {
         // The first dimension is the file (a, b, c, etc.)
         // The second dimension is the rank (1, 2, 3, etc.)
-        // Thus, board[3][4] is square d5.
+        // Thus, board[3][4] is square d5.                                      remember your array starts at 0
         // A value of 0 means the square is empty
         // 1 means the knight is in the square
         // 2 means the knight could move to the square
-        int[][] board = new int[8][8]; //→39
+        int[][] board = new int[8][8]; //→39                                    //board array = 2D array - 8 rows for ranks, 8 columns for files
+                                                                                //holds int values
         String kSquare; // the knight's position as a square
         Pos kPos; // the knight's position as a Pos
         // get the knight's initial position
-        do //→45
+        do //→45                                                                
         {
-            System.out.print("Enter knight's position: ");
-            kSquare = sc.nextLine();
-            kPos = convertSquareToPos(kSquare);
-        } while (kPos == null);
-        board[kPos.x][kPos.y] = 1; //→52
+            System.out.print("Enter knight's position: ");                      //prompts user for a position
+            kSquare = sc.nextLine();                                            //position is stored in variable kSquare
+            kPos = convertSquareToPos(kSquare);                                 //kPos contains method that convert's user entry into a Pos object (i.e. x,y)
+        } while (kPos == null);                                                 //returns null if incorrect value entered
+        board[kPos.x][kPos.y] = 1; //→52                                        //position entered set to 1 - indicates position of the knight
         System.out.println("\nThe knight is at square "
                 + convertPosToSquare(kPos));
         System.out.println(
                 "From here the knight can move to:");
-        for (int move = 0; move < moves.length; move++) //→59
+        for (int move = 0; move < moves.length; move++) //→59                   //for loop used to determine all possible moves
         {
-            int x, y;
+            int x, y;                                                           //x and y are declared to be type ints
             x = moves[move][0]; // the x for this move
             y = moves[move][1]; // the y for this move
-            Pos p = calculateNewPos(kPos, x, y);
-            if (p != null) {
-                System.out.println(convertPosToSquare(p));
-                board[p.x][p.y] = 2;
+            Pos p = calculateNewPos(kPos, x, y);                                //calculateNewPos method accepts 3 parameters - board position, x and y values which indicate where the knight might be moved
+            if (p != null) {                                                    //if p is valid, returns position move leads to
+                System.out.println(convertPosToSquare(p));                      //prints out new position - convertPosToSquare convert Pos object into string
+                board[p.x][p.y] = 2;                                            //position knight moves to given value 2
             }
         }
-        printBoard(board); //→72
+        printBoard(board); //→72                                                //board array printed
     }
     // this method converts squares such as a1 or d5 to
     // x, y coordinates such as [0][0] or [3][4]
@@ -73,7 +74,7 @@ public class P410_KnightMoves {
         int x = -1;
         int y = -1;
         char rank, file;
-        file = square.charAt(0);
+        file = square.charAt(0);                                                //chatAt method used to specific value at specified position
         if (file == 'a') {
             x = 0;
         }
@@ -123,16 +124,16 @@ public class P410_KnightMoves {
         if (rank == '8') {
             y = 7;
         }
-        if (x == -1 || y == -1) {
+        if (x == -1 || y == -1) {                                               //if user enters an incorrect value, null returned
             return null;
         } else {
-            return new Pos(x, y);
+            return new Pos(x, y);                                               //otherwise new position returned
         }
     }
     // this method converts x, y coordinates such as
     // [0][0] or [3][4] to squares such as a1 or d5.
 
-    public static String convertPosToSquare(Pos p) //→114
+    public static String convertPosToSquare(Pos p) //→114                       accepts Pos argument and returns a string that corresponds to the position
     {
         String file = "";
         if (p.x == 0) {
@@ -159,17 +160,19 @@ public class P410_KnightMoves {
         if (p.x == 7) {
             file = "h";
         }
-        return file + (p.y + 1);
+        return file + (p.y + 1);                                                //return x, y
+                                                                                //chess rank numbers start with 1
     }
 // this method calculates a new Pos given a
 // starting Pos, an x move, and a y move
     // it returns null if the resulting move would
     // be off the board.
 
-    public static Pos calculateNewPos(Pos p, int x, int y) //→134
+    public static Pos calculateNewPos(Pos p, int x, int y) //→134               
     {
         // rule out legal moves
-        if (p.x + x < 0) {
+        if (p.x + x < 0) {                                                      //takes the starting position, checks if x < 0 and y>0 and adds, if legal
+                                                                                
             return null;
         }
         if (p.x + x > 7) {
@@ -182,26 +185,28 @@ public class P410_KnightMoves {
             return null;
         }
 // return new position
-        return new Pos(p.x + x, p.y + y);
+        return new Pos(p.x + x, p.y + y);                                       //returns new position
     }
 
-    public static void printBoard(int[][] b) //→150
-    {
-        for (int y = 7; y >= 0; y--) {
-            for (int x = 0; x < 8; x++) {
-                if (b[x][y] == 1) {
-                    System.out.print(" X ");
-                } else if (b[x][y] == 2) {
-                    System.out.print(" ? ");
+    public static void printBoard(int[][] b) //→150                             //accepts b as a 2D array, type int
+                                                                                //use nested loop to print the board
+    {                                                                           
+        for (int y = 7; y >= 0; y--) {                                          //outer loop prints each rank; indexed backwards
+            for (int x = 0; x < 8; x++) {                                       //inner loop prints the squares
+                if (b[x][y] == 1) {                                             //starting point                                      
+                                                                                //if statement used to check value of the board array element
+                    System.out.print(" X ");                                    //print X for starting point
+                } else if (b[x][y] == 2) {                                      //if next possible move,
+                    System.out.print(" ? ");                                    //print ?
                 } else {
-                    System.out.print(" - ");
+                    System.out.print(" - ");                                    //print -
                 }
             }
             System.out.println();
         }
     }
 
-    public static boolean getYorN(String prompt) //→167
+    public static boolean getYorN(String prompt) //→167                         Takes in user input 
     {
         while (true) {
             String answer;
@@ -217,7 +222,7 @@ public class P410_KnightMoves {
 }
 // this class represents x, y coordinates on the board
 
-class Pos //→183
+class Pos //→183                                                                Pos class - keeps track of board positions
 {
 
     public int x;

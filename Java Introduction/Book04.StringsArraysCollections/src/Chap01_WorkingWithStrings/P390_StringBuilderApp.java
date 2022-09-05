@@ -13,7 +13,7 @@ public class P390_StringBuilderApp {
     public static void main(String[] args) {
         System.out.print("Enter a string: ");
         String s = sc.nextLine();
-        StringBuilder sb = new StringBuilder(s);
+        StringBuilder sb = new StringBuilder(s);                                //object - retains memory
         int vowelCount = 0;
         for (int i = 0; i < s.length(); i++) {
             char c = s.charAt(i);                                               //returns characters at the specified position

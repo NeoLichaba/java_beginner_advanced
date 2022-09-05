@@ -13,8 +13,8 @@ public class P385_ListWords {
     public static void main(String[] args) {
         System.out.print("Enter a string: ");
         String s = sc.nextLine();
-        String[] word = s.split("\\s+");                                        //split method requires one to use an array. string s is split making use of the \\s+ pattern                                       
-        for (String w : word) {                                                 //for each loop loops through elements of array - word (String with variable name w, loops through array with name word)   
+        String[] word = s.split("\\s+");                                        //split method requires one to use an array. string s is split making use of the \\s+ pattern; returns array of strings                                       
+        for (String w : word) {                                                 //enhanced loop loops through elements of array - word (String with variable name w, loops through array with name word)   
             System.out.println(w);                                              //print out variable w
         }
     }

@@ -3,14 +3,14 @@ package Chap01_WorkingWithStrings;
 
 /* Strings are reference types, not value/primitive types
  * Java allows you to assign string literals to string variables
- * Escape sequences
- * Marked by "" 
- * Immutable object - don't change the String itself but returns a new String object with modified value
+ * Includes escape sequences 
+ * Marked by "" vs. ''(i.e. string literal vs. character literal)
+ * Immutable object - can't change the String itself but returns a new String object with modified value
  * If there is a primitive type used in a concatenation expression, Java converts primitive type to String
- * Primitive wrapper classes (i.e. integer and double) have parse methods that convert string varlues to numeric types
+ * Primitive wrapper classes (i.e. integer and double) have parse methods that convert string values to numeric types
     ** e.g. String s = "50";
             int i = Integer.parseInt(s);
- * Compare string making use of equals method and not equals operator
+ * Compare string making use of equals method and not equals operator (for primitive data types)
  * equalsIgnoreCase method compares strings without considering the case
  * trim method removes white-space characters from the start and end of a word
     ** Remember to assign the result of this expression back to the variable (e.g s = s.trim();) otherwise result 
