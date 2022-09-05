@@ -1,12 +1,9 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Chap08_Packages_JavaModuleSystem;
 
 /**
  *
- * @author User
+ * 
  */
 public class Employee {
 
@@ -74,7 +71,7 @@ public class Employee {
      * @param firstName A String containing the employee's first name.
      */
     public void setFirstName(String firstName) {
-        this.firstName = firstName 
+        this.firstName = firstName; 
                 /**
                  * Gets the employee's salary.
                  *
