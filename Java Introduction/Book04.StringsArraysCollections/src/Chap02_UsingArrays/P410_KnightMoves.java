@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 /**
  *
- * @author User
+ * 
  */
 public class P410_KnightMoves {
 

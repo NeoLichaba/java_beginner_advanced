@@ -5,7 +5,7 @@ package Chap02_UsingArrays;
    --------------------
 
     % Array = set of variables that is references by using a variable + index number
-    % Elements = item within an array
+    % Elements = items within an array
     % An array is itself an object. Thus, if x[5]refers to an element of an array, x refers to the array itself.
     % An array has a fixed length that’s set when the array is created. This length 
       determines the number of elements that can be stored in the array. The maximum index value you can use with any array 
@@ -32,7 +32,7 @@ package Chap02_UsingArrays;
             - Length of the array initializer is determined by the number of values listed in the initializer
 
  * Using for Loops with Arrays (refer to BoboAndTheLockers example)
-   ------------------------------
+   ------------------------------------------------------------------
     % Used to process an array
       - Fill an array with names
       e.g. String[] players = new String[count];
@@ -79,7 +79,7 @@ package Chap02_UsingArrays;
              "Friday", "Saturday" };
              return days;
             }  
-    % Static method prints contents of Strinf array to the consoler
+    % Static method prints contents of String array to the consoler
       e.g. public static void printStringArray(String[] strings)
             {
              for (String s : strings)
@@ -110,10 +110,10 @@ package Chap02_UsingArrays;
     % Nest array initializers
 
     ** Using jagged arrays (refer to Jagged Array example)
-    -----------------------------------------------
+    -----------------------------------------------------------
     % 2D array in which the length of each element of the main array is different
 
- * Going beyond 2D
+ * Going beyond 2D (refer to KnightMoves listing)
    -------------------------------------------------
     % 3D can be created too
     % Nested if statements used to process an array with 3D or more. Initialized a 3D array with number 1-27
