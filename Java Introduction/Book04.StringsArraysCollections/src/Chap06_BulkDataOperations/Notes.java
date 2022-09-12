@@ -17,7 +17,7 @@ package Chap06_BulkDataOperations;
 ------------------------------------------------
     * Contains methods, related interfaces 
     * Methods consist of:
-1:  * Ones that return other Stream objects - manipulate the stream, passes altered stream to be processed by another application
+1:  * (Intermediate operations) Ones that return other Stream objects - manipulate the stream, passes altered stream to be processed by another application
       * Filter method, argument = predicate, returns a boolean value
         - function is called once for every element in the stream and is passed a single argument the element in question
         - if method returns true, element passed on to the result stream, if false - null
@@ -25,9 +25,11 @@ package Chap06_BulkDataOperations;
         - To sort, use comparator function
 2:  Mapping Methods - convert a stream whose elements are of one type to another
                     - e.g mapToDouble method
-3:  Terminal Methods - do not return another stream
+3:  Terminal Methods - do not return another stream (i.e. collect, forEach, reduce)
 4:  Aggregate methods - perform calculations on elements in the stream
     - Some return an optional data type - object that might contain a value/might not contain a value
+
+Streams don't change the original datas structure, they only provide the result as per the pipelined methods
 
 @ Using Parallel Streams
 -------------------------------------------------

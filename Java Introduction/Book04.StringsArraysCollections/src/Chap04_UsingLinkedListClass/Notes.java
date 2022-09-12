@@ -2,9 +2,10 @@
 package Chap04_UsingLinkedListClass;
 
 /* Linked List = a collection in which every object in the list maintains a pointer to the preceding and following object
+ * Each element in a LinkedList is called a Node - each Node contains two items: 1) Content of the element; 2)Address/Reference to next node in linked list
  * Advantages: 
-    - Has no capacity issues
-    - Change pointers in preceding and following text in order to insert/remove items into the linked list
+    - Size of array is fixed; LinkedList has no capacity issues
+    - Easier to change pointers in preceding and following text in order to insert/remove items into the linked list
  * Suited for creating stacks (added to and retrieved from the front) and queues (added to the back and retrieved from the front)
  * Disadvantages:
     - Require more memory
@@ -20,8 +21,8 @@ package Chap04_UsingLinkedListClass;
  > Adding Items to a LinkedList
    -----------------------------
     - make use of add method (similar to ArrayList class)
-    - addFirst method works the same was as the add method
-    - addLast is the inverse - begins adding from the front of the list (stacks them on top of one another)
+    - addLast method works the same was as the add method
+    - addFirst is the inverse - begins adding from the front of the list (stacks them on top of one another)
       > e.g. LinkedList<String> officers = new LinkedList<String>();
         officers.addFirst("Blake");
         officers.addFirst("Burns");
@@ -43,7 +44,7 @@ package Chap04_UsingLinkedListClass;
     - element - similar to getFirst; defined by Queue interface
     - peek and peekFirst - similar to getFirst but returns null
     - remove and removeFirst - both remove item from the list; NoSuchElement exception
-    - poll and pollFirst - Simmilar to removefirst but returns null if the list is empty
+    - poll and pollFirst - Similar to removefirst but returns null if the list is empty
     - pop
     
     Following methods retrieve the last item in the list:

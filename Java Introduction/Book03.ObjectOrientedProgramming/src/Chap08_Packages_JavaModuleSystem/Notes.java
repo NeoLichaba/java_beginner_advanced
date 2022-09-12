@@ -32,7 +32,7 @@ package Chap08_Packages_JavaModuleSystem;
     - Contains more than one file zipped so that JRE can access it quickly
     - Contains a manifest file - contains information about the files in the archive
     - Distribute completed Java applications
-    - Run jar comman from command line
+    - Run - jar command from command line
 
 >> Archiving a package
 
@@ -79,11 +79,11 @@ Using JavaDoc to Document Your Classes
         & Immediately before the declaration of a public field
         & Immediately before the declaration of a public method or constructor
     & Multiline comments 
-    & Can include HTML markup but avoid usung heading tags as the JavaDocs creates those
+    & Can include HTML markup but avoid using heading tags as the JavaDocs creates those
     & Can use doc tags that provide speific info used by JavaDoc
 
 > Using the javadoc command
-    & javadoc com\lowewriter\payroll\*.java - path used to create documentation for
+    & javadoc com\lowewriter\payroll\*.java - path used to create documentation 
         - javadoc creates doc pages in current directory
 
 > Viewing JavaDoc pages
@@ -96,7 +96,7 @@ Using the Java Module System
     & Developers often have problems managing packages for large applications that use a number of packages,
       especially if packages require different versions of Java
     & Don't provide an easy way to create lightweight packages - limits Java's ability to run on devices with limited resources
-      - such as controllers or smartphones
+      - such as smartphones
     & These pitfalls are addressed by JVS aka Project Jigsaw
     & Module - groups classes and explicitly lists which other modules the module depends on and specific public types
              - Must list its dependencies

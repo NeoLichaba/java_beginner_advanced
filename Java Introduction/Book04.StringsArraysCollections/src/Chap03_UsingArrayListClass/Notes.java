@@ -20,8 +20,8 @@ package Chap03_UsingArrayListClass;
       - Can specify the type of elements that array list is allowed to contain (e.g. ArrayList<String> signs = new ArrayList<String>();)
         > Generics implemented in this case as compiler will complain if incorrect type is added 
 
- >> Adding Elements
- --------------------------------------
+ >> Adding Elements (refer to Nums example)
+ --------------------------------------------
     - Use add method to add objects to array list
     - Can insert an object at a specific position in the list by listing the position in the add method.
       > e.g. ArrayList<String> nums = new ArrayList<String>();
