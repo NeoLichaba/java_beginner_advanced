@@ -13,6 +13,26 @@ package Chap01_ProgrammingThreads;
         - Games
      -- Understanding the Thread Class
         - Let's you create an object that can be run as a thread in a mulitthreaded Java app
+        - Refer to examples CountDownApp and CountDownClock
+     
+  -- Implementing the Runnable Interface
+    - Runnable interface uses another technique for creating and starting threads - more code but more flexible
+    - Allows for thread to extend another class
+    - Marks an object that can be run as a thread
+    - Only has one method - run()
+    - Using the Runnable Interface
+      1. Create a class that implements Runnable
+      2. Provide a run method in the class you created
+      3. Create an instance of the Thread class and pass Runnable object to constructor as a parameter
+      4. Call the Thread object's start method
+        - run method of Runnable object is called and executes in a separate thread
+        - example 1: RunnableClass rc = new RunnableClass();
+                     Thread t = new Thread(rc);
+                     t.start();
+        - example 2: Thread t = new Thread(new RunnableClass());
+                     t.start()
+        - example 3: new Thread(new RunnableClass()).start();
+
  * @author Neo
  */
 public class Notes {
