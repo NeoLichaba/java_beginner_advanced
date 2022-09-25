@@ -26,7 +26,7 @@ public class P482_LaunchEvent implements Runnable {                             
         }
         catch (InterruptedException e)
         {}
-        System.out.println(message);                                            //displays methods
+        System.out.println(message);                                            //displays message
     }
 }
 
