@@ -31,7 +31,7 @@ public class P483_CountDownApp {
          events.add(new P482_LaunchEvent(0, "Liftoff!"));
          clock.start();
          for (Runnable e : events)                                              //iterates using an enhanced for loop
-         new Thread(e).start();*/
+         new Thread(e).start();*/                                               //new Thread's start method called
       
    }
   
