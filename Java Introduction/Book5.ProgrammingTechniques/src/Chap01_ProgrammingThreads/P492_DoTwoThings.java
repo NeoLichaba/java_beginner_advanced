@@ -10,7 +10,7 @@ public class P492_DoTwoThings {
 
     ScheduledThreadPoolExecutor pool
             = new ScheduledThreadPoolExecutor(2);
-    CountDownClock clock = new CountDownClock(20);
+    CountDownClock clock = new CountDownClock(20);                              //Instance of CountDownClock created
 
     public static void main(String[] args) {
         new P492_DoTwoThings();
