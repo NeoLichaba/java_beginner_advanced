@@ -33,6 +33,14 @@ package Chap01_ProgrammingThreads;
                      t.start()
         - example 3: new Thread(new RunnableClass()).start();
 
+    -- Synchronizing Methods
+     - Need to consider concurrency when running multiple threads
+     - Concurrency - when 2 threads try to access the same methods, at the same time
+     - The key to handling concurrency issues is recognizing methods that update data 
+       and that might be called by more than one thread. 
+     - Once these are identified, add "synchronized" to the method declaration (i.e. public synchronized void method()...)
+     - This tells Java to put a lock on the object so that no other methods can call any other synchronized method for the object
+       until it's finished (i.e. multithreading temporarily disabled)
  * @author Neo
  */
 public class Notes {
