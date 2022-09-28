@@ -42,7 +42,39 @@ package Chap03_UsingRecursion;
 
     $ Using the partition method
        -Partition method accepts 2 parameters - low and high indexes that mark the portion of array to be sorted
-       - 
+       - Basic outline of partition method:
+         1. Pick a pivot point.
+         2. Move all elements that are less than the pivot point to the left side of 
+            the partition.
+         3. Move all elements that are greater than the pivot point to the right side 
+            of the partition.
+        4. Return the index of the pivot point
+       
+       - Common technique for partitioning the array is to maintain 2 index variables - i&j
+       - i starts at the beginning - moves towards pivot point
+       - j starts at the opposite end - moves backwards until it finds a value less than the pivot point
+       - Swaps them as indexes are higher>pivot point on RHS and less than<pivot point on LHS
+       - i increments until finds another value>than pivot point
+       - j decrements until it finds another value less than the pivot value - elements are swapped
+       - Once j<i - partitioning stops 
+
+        public static int partition(int low, int high)                          //low and high ends of the partition to be
+                                                                                partitioned are passed in as parameters
+        {
+            int pivot = a[low];                                                 //pivot point value chosen
+            int i = low - 1;                                                    //i & j initialised
+                                                                                //step back taken (-/+)
+            int j = high + 1;                       
+            while (i < j)                                                       //while loop indicates when partitioning is finished (j)
+            {
+                for (i++; a[i] < pivot; i++);                                   //increments i until value > pivot point
+                for (j--; a[j] > pivot; j--);                                   //decrements j until value < pivot point
+                if (i < j)                                                      //checks if values have crossed
+                swap(i, j);                                                     //if they haven't, swap method called and values swapped
+         }
+            return j;
+        }
+
  * @author Neo
  */
 public class Notes {
