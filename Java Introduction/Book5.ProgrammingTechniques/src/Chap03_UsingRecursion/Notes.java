@@ -12,7 +12,7 @@ package Chap03_UsingRecursion;
     $ DirList demonstrates recursion
  
  - Writing Your Own Sorting Routine
-    $ Quicksort - alternative to recursion
+    $ Quicksort - alternative to recursion (refer to QuickSortApp example)
     $ How QuickSort Works
         1. Pick an arbitrary value that lies within the range of values in the array.
                 This value is the pivot point. The most common way to choose the pivot point 

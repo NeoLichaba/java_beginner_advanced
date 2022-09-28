@@ -23,7 +23,7 @@ package Chap03_UsingRecursion;
 import java.io.File; //→1                                                       //File class
 import java.util.Scanner;
 
-public class DirList {
+public class P527_DirList {
 
     static Scanner sc = new Scanner(System.in);
 
