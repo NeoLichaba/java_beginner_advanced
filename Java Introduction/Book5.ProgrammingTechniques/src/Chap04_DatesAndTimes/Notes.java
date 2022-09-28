@@ -65,7 +65,24 @@ package Chap04_DatesAndTimes;
     getDayOfWeek method returns a value of type DayOfWeek
     System.out.println(date.getDayOfWeek());
 
-    
+    Comparing Dates (P551)
+    --------------------------------------------------------
+    Use isEquals() method
+    if (LocalDate.now().isEqual(LocalDate.now()))
+    System.out.println("All is right in the universe.");
+
+    Note that you can use built-in operators with methods that return integer results. 
+    Thus, the following code will work just as you would expect:
+        if (LocalDate.now().getDayOfMonth() < 15)
+        System.out.println("It is not yet the 15th.");
+    Because the getDayOfMonth method returns an integer, you can use the < operator 
+    to determine if the 15th of the month has yet arrived
+
+    Calculating with Dates (P552, refer to CalculatingDates example)
+    ------------------------------------------------------------------
+    Use until method. Calculates difference btwn a date and the date passed as the first parameter,
+    measured in the units indicated by the second parameter
+
 * @author Neo
  */
 public class Notes {
