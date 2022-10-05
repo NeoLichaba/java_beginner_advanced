@@ -10,17 +10,17 @@ package Chap02_WorkingWithFileStreams;
 
 
 
-import java.io.BufferedReader;                                                  //used 
+import java.io.BufferedReader;                                                  //used to read data one character at a time/line
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.FileReader;
+import java.io.FileReader;                                                      //reads data from a character sttream originating from a file
 import java.io.IOException;
 import java.text.NumberFormat;
 
 public class P804_ReadFile {
 
     public static void main(String[] args) {
-        NumberFormat cf = NumberFormat.getCurrencyInstance();
+        NumberFormat cf = NumberFormat.getCurrencyInstance();                   //NumberFormat class formats a value as currency (decimal format)
         BufferedReader in = getReader("movies2.txt");                           //getReader method used to create a BufferedReader object
                                                                                 //name of file is passed to this method as a parameter
                                                                                 //in a different program, user would use via JFileChooser box
@@ -40,11 +40,12 @@ public class P804_ReadFile {
     private static BufferedReader getReader(String name)                        //getReader method creates a BufferedReader object for the file name that
                                                                                 //passed in the parameter
     {
-        BufferedReader in = null;
+        BufferedReader in = null;                                               //returns null when the end of the file is reached
         try {
-            File file = new File(name);
+            File file = new File(name);                                         //File object created conneting character stream to a file                              
             in = new BufferedReader(
-                    new FileReader(file));                                      //newFileReader object created with 
+                    new FileReader(file));                                      //FileReader constructor called to create a FileReader object
+                                                                                //Object passed into the BufferedReader constructor to create a BufferedReader object
         } catch (FileNotFoundException e) {
             System.out.println(
                     "The file doesn't exist.");

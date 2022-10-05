@@ -1,8 +1,5 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
-package WriteFile;
+
+package Chap02_WorkingWithFileStreams;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -14,7 +11,7 @@ import java.io.PrintWriter;
  *
  * @author User
  */
-public class WriteFile {
+public class P811_WriteFile {
 
     public static void main(String[] args) //→4
     {
