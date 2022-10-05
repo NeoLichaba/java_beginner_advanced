@@ -5,8 +5,10 @@ package Chap05_GenericCollectionClasses;
  * Stack - Uses LinkedList class to implement a specific type of collection; items are added to the front and retrieved from the front
  * Queue - Collection in which items are added to the end and retrieved from the front
  * Generics allow for only certain types of objects to be added to the collection
- * ArrayList<Employee> empList = new ArrayList<Employee>();
- * No need to cast object prior to using it 
+ 
+ * When wanting to retrieve from a collection, no need to cast object prior to using it 
+Before: Employee e = (Employee)empList.get(0);
+After: ArrayList<Employee> empList = new ArrayList<>(); 
 
  * Creating a Generic Class
    -------------------------------
@@ -64,14 +66,14 @@ package Chap05_GenericCollectionClasses;
  
  * Using Wildcard-Type Parameters
    -------------------------------
-    * Inheritane doesn't work when it comes to formal type paramters. Use a feature of generics = wildcards
+    * Inheritance doesn't work when it comes to formal type parameters. Use a feature of generics = wildcards
     * To create a method that accepts any type of ArrayList: public void addItems(ArrayList<?> list)
     * ? indicates you can code any kind of type here
     * To limit the parameter to collections of a specific superclass - add extends clause to wildcard
       e.g. public void addItems(ArrayList<? extends Employee> list)
     * For addItems method to accept an ArrayList of type E or any of its subclasses. To do that, you’d declare the addItems method like this
       e.g public void addItems(ArrayList<? extends E> list)
-      - <? extends E> = arrayList can be of type E or any type thaty extends E
+      - <? extends E> = arrayList can be of type E or any type that extends E
 
 * A Generic Queue Class (refer to example GenQueueTest)
  -------------------------------------------------------

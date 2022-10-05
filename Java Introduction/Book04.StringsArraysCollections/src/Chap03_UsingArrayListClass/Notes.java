@@ -6,7 +6,7 @@ package Chap03_UsingArrayListClass;
  * Lambda expressions - efficient at dealing with collections that have a large number of items
 
  * ArrayList is different to an Array in that:
-    - Automatically resizes iteself
+    - Automatically resizes itself
     - Can insert elements into the middle of the collection
     - Can delete items and other items moves forward one position to fill the spot previously occupied
     - Uses an internal array to store data - creates a new array with larger capacity

@@ -1,7 +1,4 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+
 package Chap03_UsingArrayListClass;
 
 import java.util.ArrayList;
@@ -15,7 +12,7 @@ public class DeletingElements {
     
     public static void main(String[] args) {
         
-         ArrayList<Employee> emps = new ArrayList<Employee>();                          //Employee element = datatype, assuming to be a String
+         ArrayList<String> emps = new ArrayList<String>();                          //Employee element = datatype, assuming to be a String
         // create employee objects
         Employee emp1 = new Employee("Addams", "Gomez");
         Employee emp2 = new Employee("Taylor", "Andy");

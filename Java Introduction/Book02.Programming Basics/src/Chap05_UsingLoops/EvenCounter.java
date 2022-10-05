@@ -2,7 +2,7 @@
 package Chap05_UsingLoops;
 
 /*
- * Program uses a while lopp to print even numbers from 2 to 20 on the console 
+ * Program uses a while loop to print even numbers from 2 to 20 on the console 
  * 
  */
 public class EvenCounter {

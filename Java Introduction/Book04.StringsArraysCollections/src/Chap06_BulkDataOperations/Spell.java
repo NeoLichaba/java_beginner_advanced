@@ -17,7 +17,7 @@ public class Spell {
     }
 
     public Spell(String spellName, SpellType spellType,
-            String spellDescription) {                                          //constructor lets you specift the name, type and description for spell
+            String spellDescription) {                                          //constructor lets you specify the name, type and description for spell
         name = spellName;
         type = spellType;
         description = spellDescription;
@@ -31,7 +31,7 @@ public class Spell {
     public static void main(String[] args) {
 
         ArrayList<Spell> spells = new ArrayList<>();                            //ArrayList created with element Spell and constructor called
-        spells.add(new Spell("Aparecium", Spell.SpellType.SPELL, //Spells are loaded into ArrayList
+        spells.add(new Spell("Aparecium", Spell.SpellType.SPELL,                //Spells are loaded into ArrayList, using the add() method
                 "Makes invisible ink appear."));
         spells.add(new Spell("Avis", Spell.SpellType.SPELL,
                 "Launches birds from your wand."));
@@ -45,10 +45,10 @@ public class Spell {
                 "Locks an opponent's legs."));
 
 //spells.stream().forEach(s -> System.out.println(s));                          //equivalent to forEach loop; prints out each spell
-        //spells.stream() //converts ArrayList to a stream
-          //      .filter(s -> s.type == Spell.SpellType.SPELL)                    //filter method used to select spell items
-            //    .filter(s -> s.name.toLowerCase().startsWith("a"))              //filter method used to convert spell name that starts with the letter "a" 
-              //  .forEach(s -> System.out.println(s));                           //entire stream processed through the forEach loop
+        spells.stream() //converts ArrayList to a stream
+               .filter(s -> s.type == Spell.SpellType.SPELL)                    //filter method used to select spell items
+              .filter(s -> s.name.toLowerCase().startsWith("a"))              //filter method used to convert spell name that starts with the letter "a" 
+            .forEach(s -> System.out.println(s));                           //entire stream processed through the forEach loop
                                                                                     //to print out the spells
 
 //Parallel streams demonstrated  

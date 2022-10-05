@@ -37,7 +37,7 @@ Streams don't change the original datas structure, they only provide the result 
     - Elements in a sequential stream are produced by the stream method and create streams that are processed one element after the next
     - Parallel Streams - take full advantage of multicore processors by breaking its elements into two or more smaller streams
                          performing operations on them, recombining separate streams to create final result
-                       - the intermediate streams can be processed by a separte thread which can improve performance for large streams
+                       - the intermediate streams can be processed by a separate thread which can improve performance for large streams
                        - use parallelStream method instead of stream method (refer to Spell code)
                        - can't predict order in which element of the stream is processed
 Optional 

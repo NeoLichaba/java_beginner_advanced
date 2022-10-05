@@ -27,8 +27,8 @@ public class AddLinkedList {
         
         //adding element to the third postion
         officers.add(2, "Boemo");
-//for (String s : officers)
- //System.out.println(s);
+        //for (String s : officers)
+        //System.out.println(s);
  
         //Iterating LinkedList
         Iterator<String> iterator = officers.iterator();                        //iterator method is called to loop through officers collection

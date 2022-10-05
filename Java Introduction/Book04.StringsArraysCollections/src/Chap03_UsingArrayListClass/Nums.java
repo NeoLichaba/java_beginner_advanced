@@ -9,7 +9,7 @@ import java.util.ArrayList;
  */
 public class Nums {
     public static void main(String[] args) {
-        ArrayList<String> nums = new ArrayList<String>();
+        ArrayList<String> nums = new ArrayList<>();
                 nums.add("One");
                 nums.add("Two");
                 nums.add("Three");

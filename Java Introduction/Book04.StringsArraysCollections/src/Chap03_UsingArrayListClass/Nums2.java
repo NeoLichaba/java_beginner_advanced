@@ -18,13 +18,13 @@ public class Nums2 {
                 nums.add(2, "Two and a half");
 
         //for (int i = 0; i < nums.size(); i++)                                 //for loop used to iterate through the size nums arrayList
-          //  System.out.println(nums.get(i));                                  //use getMethod to print out nums at position i
+          //System.out.println(nums.get(i));                                  //use getMethod to print out nums at position i
             //for (String s : nums)                                             //enhanced for statement - String s elements retrieved from nums arrayList
             //System.out.println(s);                                            //printed in console
             for (String s : nums)
         {
-            int i = nums.indexOf(s);                                            //makes use of indexOf method to return position of occurrence of string
-            System.out.println("Item " + i + ": " + s);
+          int i = nums.indexOf(s);                                            //makes use of indexOf method to return position of occurrence of string
+        System.out.println("Item " + i + ": " + s);
         }
     }}
 
