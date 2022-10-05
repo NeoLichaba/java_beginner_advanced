@@ -35,6 +35,51 @@ package Chap01_WorkingWithFiles;
       - Full path for a file (incl. drive letter and all directories and subdirectories) - getCannonicalPath method
                                                                                          - removes any system-dependent oddities such as relative paths, dots, double dots etc.
 
+ * Getting the contents of a directory (P781)
+   ----------------------------------------------
+    - A directory is a file that contains a list of other files or directories 
+    - Call the isDirectory method in order to determine whether a File object is a directory
+        - if the method returns true, the File is a directory
+    - You can get an array of all the files contained in a directory by calling the listFiles method
+    - File dir = new File(path);
+        if (dir.isDirectory())
+        {
+         File[] files = dir.listFiles();
+         for (File f : files)
+         System.out.println(f.getName());
+        }
+    - Lists files, not subdirectories or hidden files
+    - File dir = new File(path);
+        if (dir.isDirectory())
+        {
+         File[] files = dir.listFiles();
+         for (File f : files)
+         {
+         if (f.isFile() && !f.isHidden())
+         System.out.println(f.getName());
+         }
+        }
+     - Directory listings are especially well suited to recursive programming
+
+     Renaming a file (P782)
+   ---------------------------------
+`   - Use the renameTo method 
+`   - method uses another File object as a parameter that specifies the file you want to rename the current file
+    - It returns a boolean value indicates whether the file was renamed successfully 
+    - The following statements change the name of a file named hits.log to savedhits.log
+    - File f = new File("hits.log");
+        if (f.renameTo(new File("savedhits.log")))
+         System.out.println("File renamed.");
+        else
+         System.out.println("File not renamed.");
+    }
+        - renameFile f = new File("logs\\hits.log");
+            if (f.renameTo(new File("savedlogs\\hits.log")))
+             System.out.println("File moved.");
+            else
+             System.out.println("File not moved.")To method can also move a file from one directory to another. This code moves the file hits.log
+          from the folder logs to the folder savedlogs:
+      
  * @author Neo
  */
 public class Notes {
