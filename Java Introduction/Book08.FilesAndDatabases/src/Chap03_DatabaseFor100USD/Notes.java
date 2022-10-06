@@ -34,12 +34,55 @@ package Chap03_DatabaseFor100USD;
     Using singleton selects
     ------------------------------------
   -  When you want to retrieve information for a specific row, mention the primary 
-     key column in the where clause, like this:
-     mysql> select title, year from movie where id = 7
-     where clause selects the row whose id column equals 7
-     select statement is called a singleton select because it retrieves only one row.
-     allow users to access or update a specific database row
-     
+  -  key column in the where clause, like this:
+  -  mysql> select title, year from movie where id = 7
+  -  where clause selects the row whose id column equals 7
+  -  select statement is called a singleton select because it retrieves only one row.
+  -  allow users to access or update a specific database row
+
+    Finding what something sounds like
+    -----------------------------------------------
+  - Suppose that you want to retrieve information about a movie and can’t quite 
+    remember the name, but you know that it includes the word princess. One of the 
+    most interesting variations of the where clause throws in the word like, which 
+    lets you search rows using wildcards
+    e.g. mysql> select title, year from movie
+         -> where title like "%princess%"
+
+    Using column functions
+    -------------------------------------------------
+  - if you want a count of the total number of movies in the movie table or a 
+    count of the number of movies
+  - use column function (refer to table 3.2, p836)
+
+    Selecting data from more than one table
+    -------------------------------------------------- 
+  - select statements retrieve data from two or more tables
+
+    Eliminating Duplicates
+    ---------------------------------------------------
+  - You can eliminate duplicate rows by adding the distinct keyword in the select statement
+
+    Updating and Deleting Rows
+    --------------------------------
+    
+    Using the delete statement
+    The basic syntax of the delete statement is:
+    delete from table-name where condition;
+
+    Using the update statement
+    ----------------------------------
+   - update statement selects one or more rows in a table and then modifies the 
+   - value of one or more columns in the selected rows. Its syntax is this:
+        update table-name
+            set expressions...                  - set = updates as in java
+            where condition;
+        e.g. update movie set price = 18.95 where id = 8;
+    
+   - update more than one column, use commas to separate the expressions
+   - update statement you should know about is that the set expressions can include calculations
+     e.g update movie set price = price * 1.1;
+
  * @author User
  */
 public class Notes {
