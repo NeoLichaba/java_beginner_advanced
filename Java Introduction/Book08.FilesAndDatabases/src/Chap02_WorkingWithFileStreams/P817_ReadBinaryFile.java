@@ -20,7 +20,7 @@ public class P817_ReadBinaryFile {
     public static void main(String[] args)                                      //→5
     {
         NumberFormat cf = NumberFormat.getCurrencyInstance();                   
-        DataInputStream in = getStream("movies.dat");                           //getStream method gets data input object to read the file                             
+        DataInputStream in = getStream("movies2.dat");                           //getStream method gets data input object to read the file                             
         boolean eof = false;                                                    //eof is initialised at false
         while (!eof) {                                                          //while loop loops through all read methods
             Movie movie = readMovie(in);                                        //Movie object declared and initialised by calling the readMovie method and passing data from file
