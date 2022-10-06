@@ -40,7 +40,7 @@ public class P535_QuickSortApp {
     public static int[] sort(int[] array)                                       //sort method has 2 versions. int accepted 
     {                                                                           
         a = array;                                                              //a variable set to the array passed via parameters
-        sort(0, a.length - 1);                                                  //second array is called to sort
+        sort(0, a.length - 1);                                                  
         return a;                                                               //int value returned - sorted array
     }
 

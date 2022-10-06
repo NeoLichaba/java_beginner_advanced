@@ -10,7 +10,7 @@ import java.time.temporal.ChronoUnit;
 public class P553_CalculatingDates {
 
     public static void main(String[] args) {
-        LocalDate today = LocalDate.now();
+        LocalDate today = LocalDate.now();                                      //calling the now method
         LocalDate invDate = LocalDate.of(today.getYear(),
                 today.getMonthValue(), 15);
         if (today.getDayOfMonth() > 15) {
