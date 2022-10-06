@@ -15,10 +15,12 @@ public class Soccer_App {
 
         File soccerLeague = new File("SoccerLeague.txt");                           //Pass the path to the file as a parameter; 
         Scanner sc = null;                                                          //Made use of the Scanner class to read the file into the program
+        
         String match, team1, team2;
         int score1, score2;
         String[] sides, l1, l2;                                                     //variables declared as Strings within an array
         int leagueTotal = 0;                                                        //leagueTotal declared and initialised
+        
 
         //Map<String, Integer> scoreboard = new TreeMap<String, Integer>();
         try {                                                                       
@@ -26,6 +28,7 @@ public class Soccer_App {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+                
 
         HashMap<String, Integer> scoreboard = new HashMap<>();
 
@@ -58,9 +61,11 @@ public class Soccer_App {
         scoreboard.entrySet()                                                               //entrySet() method used to print all mappings of LinkedHashMap                                          
                 .stream()
                 .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))              //sorted() method used taking on Comparator as a parameter, combined with comparing method. Iterates over integer values
-                .forEachOrdered(x -> reverseSortedMap.put(x.getKey(), x.getValue()));       //forEachOrdered() method, iterates over values in HashMap, sorting by object key and value of the key
-        System.out.println("Scoreboard: " + "\n" + scoreboard);                                    //mapped scoreboard printed
+                .forEachOrdered(x -> reverseSortedMap.put(x.getKey(), x.getValue()));      //forEachOrdered() method, iterates over values in HashMap, sorting by object key and value of the key
+                
+        System.out.println("Scoreboard: " + "\n" + scoreboard +"\n");                                    //mapped scoreboard printed
         System.out.println("Ranking: " + "\n" + reverseSortedMap + "\n");                                 //scoreboard printed in order of rank                      
+        
         
     }
 }   
