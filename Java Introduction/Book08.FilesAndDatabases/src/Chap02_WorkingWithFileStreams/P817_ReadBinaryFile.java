@@ -61,16 +61,16 @@ public class P817_ReadBinaryFile {
             title = in.readUTF();                                               //unicode string containing title saved to title variable, read method called
             year = in.readInt();
             price = in.readDouble();
-        } catch (EOFException e) {
+        } catch (EOFException e) {                                              //read methods through EOFException - place in try/catch block
             return null;
         } catch (IOException e) {
             System.out.println("I/O Error");
             System.exit(0);
         }
-        return new Movie(title, year, price);
+        return new Movie(title, year, price);                                   //return new movie object
     }
 
-    private static void closeFile(DataInputStream in) //→64
+    private static void closeFile(DataInputStream in)                           //input stream closed
     {
         try {
             in.close();
@@ -80,7 +80,7 @@ public class P817_ReadBinaryFile {
         }
     }
 
-    private static class Movie //→76
+    private static class Movie                                                  //
     {
 
         public String title;
