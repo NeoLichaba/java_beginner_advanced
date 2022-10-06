@@ -10,7 +10,7 @@ public class P535_QuickSortApp {
     public static void main(String[] args) {
         int LEN = 100;              
         int[] unsorted = new int[LEN];
-        for (int i = 0; i < LEN; i++) //→7                                      //for loop assigns 100 unsorted values t
+        for (int i = 0; i < LEN; i++)                                            //for loop assigns 100 unsorted values t
         {
             unsorted[i]
                     = (int) (Math.random() * 100) + 1;

@@ -21,8 +21,7 @@ package Chap03_UsingRecursion;
            the pivot point are on the left side of the array and all the values that are 
            greater than or equal to the pivot point are on the right side of the array.
                 The pivot value indicates the boundary between the left side and the right side 
-                of the array. It probably won’t be dead center, but that doesn’t matter. This step 
-                is called partitioning, and the left and right sides of the arrays are partitions.
+                of the array.  This step is called partitioning, and the left and right sides of the arrays are partitions.
         3. Now treat each of the two sections of the array as a separate array, and 
            start over with Step 1 for that section.
                 That’s the recursive part of the algorithm

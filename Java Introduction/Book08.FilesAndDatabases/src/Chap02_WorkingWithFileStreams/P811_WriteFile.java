@@ -1,4 +1,3 @@
-
 package Chap02_WorkingWithFileStreams;
 
 import java.io.BufferedWriter;
@@ -9,21 +8,22 @@ import java.io.PrintWriter;
 
 /**
  *
- * @author User
+ * @author Neo
  */
 public class P811_WriteFile {
 
-    public static void main(String[] args) //→4
+    public static void main(String[] args)                                      
     {
-        Movie[] movies = getMovies();
-        PrintWriter out = openWriter("movies2.txt");
-        for (Movie m : movies) {
-            writeMovie(m, out);
+        Movie[] movies = getMovies();                                           //getMovies method called, returns an array of Movie objects written to the file
+        PrintWriter out = openWriter("movies2.txt");                            //openWriter called which creates a PrintWriter object - data written to file
+        for (Movie m : movies) {                                                //enhanced for loop used to call writeMovie method for each movie in the array 
+            writeMovie(m, out);                                                 //writeMovie accepts a movie object (movie to be written) 
+                                                                                //and PrintWriter object to write movie to
         }
-        out.close();
+        out.close();                                                            //PrintWriter closed
     }
 
-    private static Movie[] getMovies() //→12
+    private static Movie[] getMovies()                                          //getMovies method returns an array of Movie objects
     {
         Movie[] movies = new Movie[10];
         movies[0] = new Movie("It's a Wonderful Life",
@@ -49,7 +49,8 @@ public class P811_WriteFile {
         return movies;
     }
 
-    private static PrintWriter openWriter(String name) //→37
+    private static PrintWriter openWriter(String name)                          //openWriter method creates a PrintWriter object for the filename
+                                                                                //passed as a parameter. PrintWriter = buffer
     {
         try {
             File file = new File(name);
@@ -65,15 +66,15 @@ public class P811_WriteFile {
         return null;
     }
 
-    private static void writeMovie(Movie m, //→55
-            PrintWriter out) {
-        String line = m.title;
-        line += "\t" + Integer.toString(m.year);
+    private static void writeMovie(Movie m,                                     //writeMovie method accepts Movie object to be written
+            PrintWriter out) {                                                  //PrintWriter to which the movie should be written    
+        String line = m.title;                                                  //String created
+        line += "\t" + Integer.toString(m.year);                                //toString method -  
         line += "\t" + Double.toString(m.price);
         out.println(line);
     }
 
-    private static class Movie //→63
+    private static class Movie                                                  //movie object defined
     {
 
         public String title;
