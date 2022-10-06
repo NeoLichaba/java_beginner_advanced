@@ -4,8 +4,12 @@ import java.io.*;
 import java.text.NumberFormat;
 
 /* To read a binary file, work with the following classes:
- * File, FileInputStream,BufferedInputStream and DataInputStream
- *
+ * File - File itself
+ * FileInputStream - connects input stream to the file
+ * BufferedInputStream - creates a buffer 
+ * DataInputStream - reads data from the stream (primitive and strings)
+ * Program demonstrates reading and writing data in a binary file which has info about movies
+ * All read method throw eof exception 
  * @author Neo
  */
 public class P817_ReadBinaryFile {
@@ -13,12 +17,12 @@ public class P817_ReadBinaryFile {
     
  
 
-    public static void main(String[] args) //→5
+    public static void main(String[] args)                                      //→5
     {
         NumberFormat cf = NumberFormat.getCurrencyInstance();
-        DataInputStream in = getStream("movies.dat");
-        boolean eof = false;
-        while (!eof) {
+        DataInputStream in = getStream("movies.dat");                           //getStream method gets data input object to read the file                             
+        boolean eof = false;                                                    //eof is initialised at false
+        while (!eof) {                                                          //while loop loops through all read methods
             Movie movie = readMovie(in);
             if (movie == null) {
                 eof = true;
@@ -32,19 +36,20 @@ public class P817_ReadBinaryFile {
         closeFile(in);
     }
 
-    private static DataInputStream getStream(String name) //→25
-    {
+    private static DataInputStream getStream(String name)                       //DataInputStream connected to file to read data from a binary file
+                                                                                //getStream method gets data input object to read the file
+    {           
         DataInputStream in = null;
         try {
-            File file = new File(name);
-            in = new DataInputStream(
-                    new BufferedInputStream(
-                            new FileInputStream(file)));
-        } catch (FileNotFoundException e) {
+            File file = new File(name);                                         //File object instantiated with file name
+            in = new DataInputStream(                                           //provides methods that read the data types
+                    new BufferedInputStream(                                    //buffering added    
+                            new FileInputStream(file)));                        //represents file
+        } catch (FileNotFoundException e) {                                     //FileNotFoundException thrown
             System.out.println("The file doesn't exist.");
-            System.exit(0);
+            System.exit(0);                                                     //exists program if file not found
         }
-        return in;
+        return in;                                                              //
     }
 
     private static Movie readMovie(DataInputStream in) //→42
