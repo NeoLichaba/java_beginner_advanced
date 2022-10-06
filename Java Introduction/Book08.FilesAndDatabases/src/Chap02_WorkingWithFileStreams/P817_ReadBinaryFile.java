@@ -19,21 +19,21 @@ public class P817_ReadBinaryFile {
 
     public static void main(String[] args)                                      //→5
     {
-        NumberFormat cf = NumberFormat.getCurrencyInstance();
+        NumberFormat cf = NumberFormat.getCurrencyInstance();                   
         DataInputStream in = getStream("movies.dat");                           //getStream method gets data input object to read the file                             
         boolean eof = false;                                                    //eof is initialised at false
         while (!eof) {                                                          //while loop loops through all read methods
-            Movie movie = readMovie(in);
-            if (movie == null) {
+            Movie movie = readMovie(in);                                        //Movie object declared and initialised by calling the readMovie method and passing data from file
+            if (movie == null) {                                                //if movie object is null, data printed onto console
                 eof = true;
             } else {
-                String msg = Integer.toString(movie.year);
+                String msg = Integer.toString(movie.year);                      
                 msg += ": " + movie.title;
                 msg += " (" + cf.format(movie.price) + ")";
                 System.out.println(msg);
             }
         }
-        closeFile(in);
+        closeFile(in);                                                          //method closeFile called to close file
     }
 
     private static DataInputStream getStream(String name)                       //DataInputStream connected to file to read data from a binary file
@@ -52,13 +52,13 @@ public class P817_ReadBinaryFile {
         return in;                                                              //
     }
 
-    private static Movie readMovie(DataInputStream in) //→42
+    private static Movie readMovie(DataInputStream in)                          //readMovie method creates Movie object
     {
         String title = "";
         int year = 0;;
         double price = 0.0;;
         try {
-            title = in.readUTF();
+            title = in.readUTF();                                               //unicode string containing title saved to title variable, read method called
             year = in.readInt();
             price = in.readDouble();
         } catch (EOFException e) {
