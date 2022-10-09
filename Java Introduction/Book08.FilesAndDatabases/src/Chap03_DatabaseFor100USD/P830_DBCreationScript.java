@@ -1,6 +1,6 @@
 package Chap03_DatabaseFor100USD;
 
-/**
+/* Program creates a database named movies
  *
  * @author Neo
  */
