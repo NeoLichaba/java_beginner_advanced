@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE Movies SYSTEM "movies.dtd">                           
 <!--
 XML file begins with a declaration that identifies the version ofXML being used
 Listing 5.1 - movies.xml file
+Below: indication of file that contains the DTD
 -->
 
 

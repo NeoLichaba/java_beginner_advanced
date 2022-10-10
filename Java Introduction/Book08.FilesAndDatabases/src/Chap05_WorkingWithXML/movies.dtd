@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/XML/emptyDTD.dtd to edit this template
+-->
+
+<!--
+    DTD: spells out exactly what elements can appear in an XML document and in what order the elements can appear. DTD
+         stands for Document Type Definition,
+    
+-->
+
+<!-- TODO define your own vocabulary/syntax. Example follows:  -->              
+<!ELEMENT Movies (Movie*)>                                                      <!--  -->
+<!ELEMENT Movie (Title, Price)>
+<!ATTLIST Movie year CDATA #REQUIRED>
+<!ELEMENT Title (#PCDATA)>
+<!ELEMENT Price (#PCDATA)>
