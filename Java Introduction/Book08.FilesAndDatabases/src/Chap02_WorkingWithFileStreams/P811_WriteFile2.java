@@ -7,23 +7,23 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-/**
+/* Program writes lines to a text file
  *
  * @author User
  */
 public class P811_WriteFile2 {
 
-    public static void main(String[] args) //→4
+    public static void main(String[] args)                                      //getMovie method returns an array of Movie objects                              
     {
         Movie[] movies = getMovies();
-        PrintWriter out = openWriter("movies2.txt");
-        for (Movie m : movies) {
-            writeMovie(m, out);
+        PrintWriter out = openWriter("movies2.txt");                            //PrintWriter object created calling openWriter method - writes data to the file
+        for (Movie m : movies) {                                                //enhanced for loop calls writeMovie method for each movies array created
+            writeMovie(m, out);                                                 //accepts movie object contains the movie and PrintWriter object to write the movie to
         }
-        out.close();
+        out.close();                                                            //PrintWriter Closed
     }
 
-    private static Movie[] getMovies() //→12
+    private static Movie[] getMovies()                                          //an array of Movie objects writter to a file
     {
         Movie[] movies = new Movie[10];
         movies[0] = new Movie("It's a Wonderful Life",
@@ -49,14 +49,15 @@ public class P811_WriteFile2 {
         return movies;
     }
 
-    private static PrintWriter openWriter(String name) //→37
+    private static PrintWriter openWriter(String name)                          //openWriter method creates a PrintWriter object
+                                                                                //file name passed 
     {
         try {
-            File file = new File(name);
-            PrintWriter out
+            File file = new File(name);                                         //File object created to connect character stream to output file
+            PrintWriter out                                                     //PrintWriter constructor creates a PrintWriter object - write to file (i.e. append data)
                     = new PrintWriter(
-                            new BufferedWriter(
-                                    new FileWriter(file)), true);
+                            new BufferedWriter(                                 //Each class adds a capability to class wrapped
+                                    new FileWriter(file)), true);               //append mode - any data in file is retained
             return out;
         } catch (IOException e) {
             System.out.println("I/O Error");
@@ -65,15 +66,15 @@ public class P811_WriteFile2 {
         return null;
     }
 
-    private static void writeMovie(Movie m, //→55
+    private static void writeMovie(Movie m,                                     //writeMovie method accepts Movie object to be written and PrintWriter to where it will be written to
             PrintWriter out) {
-        String line = m.title;
+        String line = m.title;                                                  //String created
         line += "\t" + Integer.toString(m.year);
         line += "\t" + Double.toString(m.price);
-        out.println(line);
+        out.println(line);                                                      //writes string to file
     }
 
-    private static class Movie //→63
+    private static class Movie                                                  //
     {
 
         public String title;

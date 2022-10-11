@@ -7,12 +7,33 @@ Click nbfs://nbhost/SystemFileSystem/Templates/XML/emptyDTD.dtd to edit this tem
 <!--
     DTD: spells out exactly what elements can appear in an XML document and in what order the elements can appear. DTD
          stands for Document Type Definition,
-    
+         validates the document to make sure that there are no structural errors
 -->
 
 <!-- TODO define your own vocabulary/syntax. Example follows:  -->              
-<!ELEMENT Movies (Movie*)>                                                      <!--  -->
-<!ELEMENT Movie (Title, Price)>
-<!ATTLIST Movie year CDATA #REQUIRED>
-<!ELEMENT Title (#PCDATA)>
+<!ELEMENT Movies (Movie*)>                                                      <!-- Movies consist of 0+ Movie elements -->
+<!ELEMENT Movie (Title, Price)>                                                 <!-- Movie element consists of Title and Price -->
+<!ATTLIST Movie year CDATA #REQUIRED>                                           <!-- ATTLIST tagprovides name of each attribute -->
+<!ELEMENT Title (#PCDATA)>                                                      <!-- Title and Price consist of text data -->
 <!ELEMENT Price (#PCDATA)>
+
+<!-- Element tags define type of element that can appear in the doc and content of element type  -->
+<!--ATTLIST element attribute type default-value> -->
+<!-- Here’s a breakdown of this tag:
+    » element names the element whose tag the attribute can appear in.
+    » attribute provides the name of the attribute.
+    » type specifies what can appear as the attribute’s value. The type can be any 
+    of the items listed in Table 5-2 (P867).
+    » default provides a default value and indicates whether the attribute is 
+    required or optional. default can be any of the items listed in Table 5-3.
+ Refer to Table 5.1 (P867) for how to specify element content 
+- ATTLIST tag declaration from movies.dtd:
+    <!ATTLIST Movie year CDATA #REQUIRED>
+    This declaration indicates that the attribute goes with the Movie element, is 
+    named year, can be any kind of data, and is required
+- ATTLIST tag that specifies a list of possible values along with a default:
+    <!ATTLIST Movie genre (SciFi|Action|Comedy|Drama) Comedy>
+    This form of the ATTLIST tag lets you create an attribute that’s similar to an 
+    enumeration, with a list of acceptable values
+
+-->

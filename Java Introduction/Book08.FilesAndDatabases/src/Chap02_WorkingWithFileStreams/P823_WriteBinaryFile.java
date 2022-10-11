@@ -11,6 +11,7 @@ import java.io.IOException;
     FileOutputStream - connects to a file object and creates an output stream that can write to the file
     BufferedOutputStream -connects to FileOutputStream and adds output buffering
     DataOutputStream - gives ability to write primitive data types and strings to a stream
+    streams - i/o streams 
 
  * @author Neo
  */
@@ -58,7 +59,7 @@ public class P823_WriteBinaryFile {
     {
         DataOutputStream out = null;
         try {
-            File file = new File(name);
+            File file = new File(name);                                         //File object created connecting character stream to a file
             out = new DataOutputStream(
                     new BufferedOutputStream(
                             new FileOutputStream(file)));
