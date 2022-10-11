@@ -6,38 +6,39 @@ package Chap05_WorkingWithXML;
  * @author Neo
  */
 
-import javax.xml.parsers.*;                                                     //→1
-import org.xml.sax.*;
-import org.w3c.dom.*;
+import javax.xml.parsers.*;                                                     //DocumentBuilder and DocumentBuilderFactory                                                      
+import org.xml.sax.*;                                                           //InputSource
+import org.w3c.dom.*;                                                           //Document
 import java.text.*;
 
-public class P878_ListMoviesXML {
+public class P878_ListMoviesXML {                                               
 
     private static NumberFormat cf
             = NumberFormat.getCurrencyInstance();
 
-    public static void main(String[] args) //→11
+    public static void main(String[] args) 
     {
-        Document doc = getDocument("movies.xml");
-        Element root = doc.getDocumentElement();
+        Document doc = getDocument("movies.xml");                               //getDocument method called, reads file and Document object from movies.xml file is created (DOM file)                                                                               //Element object returned respresents the root node --> navigate to other nodes
+        Element root = doc.getDocumentElement();                                //once a root has been identified, getDocumentElement called, creating root Element/Node
         Element movieElement = (Element) root.getFirstChild();
         Movie m;
-        while (movieElement != null) {
-            m = getMovie(movieElement);
-            String msg = Integer.toString(m.year);
-            msg += ": " + m.title;
+        while (movieElement != null) {                                          //while loop used to iterate through child elements (i.e. movie elements)
+            m = getMovie(movieElement);                                         //movieElement passed into getMovie method is 
+            String msg = Integer.toString(m.year);                              //getMovie element extracts year attribute
+            msg += ": " + m.title;                                              //title and price elements extracted
             msg += " (" + cf.format(m.price) + ")";
-            System.out.println(msg);
+            System.out.println(msg);                                            //movie element printed onto console    
             movieElement
-                    = (Element) movieElement.getNextSibling();
-        }
+                    = (Element) movieElement.getNextSibling();                  //Element casted into movieElement and getNextSibling method called to get next element
+                                                                                //getNextSibling method returns a Node, not an Element hence castign required
+        }   
     }
 
-    private static Document getDocument(String name)//→29
+    private static Document getDocument(String name)                            //getDocument accepts a filename as a parameter, returns a Document object
     {
         try {
             DocumentBuilderFactory factory
-                    = DocumentBuilderFactory.newInstance();
+                    = DocumentBuilderFactory.newInstance();                     //
             factory.setIgnoringComments(true);
             factory.setIgnoringElementContentWhitespace(true);
             factory.setValidating(true);

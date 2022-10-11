@@ -54,7 +54,7 @@ public class P804_ReadFile {
         return in;
     }
 
-    private static Movie readMovie(BufferedReader in)                           //readMovie method reads a line from the reader passed as a parameter,
+    private static Movie readMovie(BufferedReader in)                           //readMovie method reads/receives a line from the reader passed as a parameter,
                                                                                 //parses data in the line, creates a Movie object from the data,
                                                                                 //movie object returned
     {

@@ -9,7 +9,7 @@ import java.io.PrintWriter;
 
 /* Program writes lines to a text file
  *
- * @author User
+ * @author Neo
  */
 public class P811_WriteFile2 {
 
@@ -74,7 +74,7 @@ public class P811_WriteFile2 {
         out.println(line);                                                      //writes string to file
     }
 
-    private static class Movie                                                  //
+    private static class Movie                                                  
     {
 
         public String title;

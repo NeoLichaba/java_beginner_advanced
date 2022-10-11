@@ -81,17 +81,17 @@ public class P823_WriteBinaryFile {
         } catch (IOException e) {                                               //write methods throw exception thus enclose in try/catch statement
             System.out.println(
                     "I/O Exception writing data."); 
-            System.exit(0);
+            System.exit(0);                                                     //status code = successful completion
         }
     }
 
     private static void closeFile(DataOutputStream out)                         //closeFile method closes the file
     {
         try {
-            out.close();
+            out.close();                                                        //close method of File method
         } catch (IOException e) {
             System.out.println("I/O Exception closing file.");
-            System.exit(0);
+            System.exit(0);                                                     //status code = successful
         }
     }
 
