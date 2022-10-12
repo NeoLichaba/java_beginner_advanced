@@ -1,7 +1,12 @@
 
 package Chap01_HelloJavaFX;
 
+/**
+ *
+ * @author Neo
+ */
 import javafx.application.Application;                                          //core class on which all JavaFX applications depend
+import static javafx.application.Application.launch;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.scene.Scene;                                                      //container that holds all UI elements displayed by program
@@ -15,7 +20,7 @@ import javafx.stage.Stage;                                                      
  *
  * @author User
  */
-public class P566_ClickMe extends Application {
+public class ClickMe extends Application {
 
     public static void main(String[] args) {
         launch(args);                                                           //Application class' launch method called - starts JavaFX app
@@ -56,3 +61,4 @@ public class P566_ClickMe extends Application {
         }
     }
 }
+
