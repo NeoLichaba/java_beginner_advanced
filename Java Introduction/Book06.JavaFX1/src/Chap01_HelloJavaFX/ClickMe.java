@@ -1,8 +1,15 @@
 
 package Chap01_HelloJavaFX;
 
-/**
- *
+/*  Listing 1.1, P6
+ *  Program demonstrates the user interface for a simple JavaFX program that includes 
+    a single button. Initially, the text of this button says Click me please! When 
+    you click it, the text of the button changes to You clicked me! If you click the 
+    button again, the text changes back to Click me please! Thereafter, each time 
+    you click the button, the text cycles between Click me please! and You clicked 
+    me! To quit the program, simply click the Close button (the X at the upper-right 
+    corner.)
+
  * @author Neo
  */
 import javafx.application.Application;                                          //core class on which all JavaFX applications depend
