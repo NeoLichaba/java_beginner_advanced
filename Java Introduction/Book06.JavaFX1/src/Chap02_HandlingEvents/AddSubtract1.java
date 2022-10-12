@@ -11,7 +11,7 @@ import javafx.event.*;
  *
  * @author User
  */
-public class AddSubtract extends Application
+public class AddSubtract1 extends Application
         implements EventHandler<ActionEvent>                                    //defines a handle method that will handle ActionEvent
                                                                                 //events, actioned by buttons
 {
@@ -32,7 +32,7 @@ public class AddSubtract extends Application
         btnAdd = new Button();                                                  //instance of add Button created
         btnAdd.setText("Add");                                                  //Add button
         btnAdd.setOnAction(this);                                               //setOnAction - eventHandler for btnAdd button
-                                                                                //this - AddSubtract class implements EventHandler
+                                                                                //this - AddSubtract1 class implements EventHandler
         // Create the Subtract button
         btnSubtract = new Button();                                             //instance of subtract button created
         btnSubtract.setText("Subtract");
