@@ -49,11 +49,11 @@ public class P853_ListMovies {
     {                                                                           //credentials are hard coded - generally obtain from user
         Connection con = null;
         try {
-            Class.forName("org.postgresql.Driver");
+            Class.forName("org.postgresql.jdbc.Driver");
             String url = "jdbc:postgresql://localhost:5432/movies";
             String user = "postgres";
             String pw = "admin";
-            con = DriverManager.getConnection(url, user, pw);
+            con = DriverManager.getConnection("jdbc:postgresql://localhost:5432/movies", "postgres", "admin");
         } catch (ClassNotFoundException e) {
             System.out.println(e.getMessage());
             System.exit(0);
