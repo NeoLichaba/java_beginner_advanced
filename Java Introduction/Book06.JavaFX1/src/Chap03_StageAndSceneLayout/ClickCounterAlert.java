@@ -11,9 +11,19 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-/**
+/* Program demonstrates displaying a message box using Alert class - how many times a user clicked a button
+ * Alert dialogs 
+    » AlertType.CONFIRMATION, which prompts the user to confirm an action.
+    » AlertType.ERROR, which display an error message.
+    » AlertType.INFORMATION, which displays an information dialog box.
+    » AlertType.WARNING, which displays a warning message.
+    » AlertType.NONE, which display a generic alert dialog
+ * Control buttons that appear on Alert box, using optional ButtonType parameter
+ * showAndWait method used to determine which button the user clicked.
+    - value returned is an object of type Optional
+    - test whether user clicked a button ny calling isPresent method, then call get method to retrieve the result
  *
- * @author User
+ * @author Neo
  */
 public class ClickCounterAlert extends Application {
 
@@ -42,12 +52,12 @@ public class ClickCounterAlert extends Application {
         primaryStage.show();
     }
 
-    public void buttonClick() {
+    public void buttonClick() {                                                 //Alert box used to display number of times button has been clicked
         iClickCount++;
         if (iClickCount == 1) {
-            Alert a = new Alert(Alert.AlertType.INFORMATION,
+            Alert a = new Alert(Alert.AlertType.INFORMATION,                    //Alert dialogue prompts user to confirm an actiobe
                     "You have clicked once.");
-            a.showAndWait();
+            a.showAndWait();                                                    //showAndWait method called - determines which button user clicked and tests value returned 
         } else {
             Alert a = new Alert(Alert.AlertType.INFORMATION, "You have clicked "
                     + iClickCount + " times.");
