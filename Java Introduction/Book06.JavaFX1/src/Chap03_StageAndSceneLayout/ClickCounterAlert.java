@@ -11,7 +11,8 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-/* Program demonstrates displaying a message box using Alert class - how many times a user clicked a button
+/* Listing 3.2, P612
+ * Program demonstrates displaying a message box using Alert class - how many times a user clicked a button
  * Alert dialogs 
     » AlertType.CONFIRMATION, which prompts the user to confirm an action.
     » AlertType.ERROR, which display an error message.
