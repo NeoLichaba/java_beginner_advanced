@@ -8,7 +8,7 @@ import javafx.scene.control.*;
 import javafx.geometry.*;
 import javafx.scene.text.*;
 
-/**
+/* Listing 5.2, P
  *
  * @author User
  */
@@ -96,7 +96,7 @@ public class PizzaOrder extends Application {
         VBox paneCrust = new VBox(lblCrust, rdoThin, rdoThick);
         paneCrust.setSpacing(10);
         // Create the toppings pane
-        Label lblToppings = new Label("Toppings");
+        Label lblToppings = new Label("Toppings");                              //check boxes created  
         chkPepperoni = new CheckBox("Pepperoni");
         chkSausage = new CheckBox("Sausage");
         chkLinguica = new CheckBox("Linguica");
