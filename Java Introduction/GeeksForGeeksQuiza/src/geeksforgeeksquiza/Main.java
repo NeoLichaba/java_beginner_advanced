@@ -5,26 +5,38 @@ package geeksforgeeksquiza;
  *
  * @author User
  */
-// filename Main.java
-final class Complex {
- 
-    private final double re;
-    private final double im;
- 
-    public Complex(double re, double im) {
-        this.re = re;
-        this.im = im;
+abstract class demo
+{
+    public int a;
+    demo()
+    {
+        a = 10;
     }
  
-    public String toString() {
-        return "(" + re + " + " + im + "i)";
+    abstract public void set();
+     
+    abstract final public void get();
+ 
+}
+ 
+class Test extends demo
+{
+ 
+    public void set(int a)
+    {
+        this.a = a;
+    }
+ 
+    final public void get()
+    {
+        System.out.println("a = " + a);
+    }
+ 
+    public static void main(String[] args)
+    {
+        Test obj = new Test();
+        obj.set(20);
+        obj.get();
     }
 }
  
-class Main {
-  public static void main(String args[])
-  {
-       Complex c = new Complex(10, 15);
-       System.out.println("Complex number is " + c);
-  }         
-}
