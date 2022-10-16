@@ -8,13 +8,15 @@ package geeksforgeeksquiza;
 
 class Test
 {
-    public static void main (String[] args) 
+    public static void main(String[] args)
     {
-        int arr1[] = {1, 2, 3};
-        int arr2[] = {1, 2, 3};
-        if (arr1.equals(arr2))
-            System.out.println("Same");
-        else
-            System.out.println("Not same");
+        Double object = new Double("2.4");
+        int a = object.intValue();
+        byte b = object.byteValue();
+        float d = object.floatValue();
+        double c = object.doubleValue();
+ 
+        System.out.println(a + b + c + d );
+ 
     }
 }
