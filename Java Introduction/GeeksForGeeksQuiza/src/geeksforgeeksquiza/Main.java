@@ -6,34 +6,54 @@ package geeksforgeeksquiza;
  * @author User
  */
 class Test
-{
-    static int a;
-     
-    static
-    {
-        a = 4;
-        System.out.println ("inside static blockn");
-        System.out.println ("a = " + a);
-    }
-     
-    Test()
-    {
-        System.out.println ("ninside constructorn");
-        a = 10;
-    }
-     
-    public static void func()
-    {
-        a = a + 1;
-        System.out.println ("a = " + a);
-    }
-     
-    public static void main(String[] args)
-    {
+{   int count = 0;
  
+    void A() throws Exception
+    {
+        try
+        {
+            count++;
+             
+            try
+            {
+                count++;
+ 
+                try
+                {
+                    count++;
+                    throw new Exception();
+ 
+                }
+                 
+                catch(Exception ex)
+                {
+                    count++;
+                    throw new Exception();
+                }
+            }
+             
+            catch(Exception ex)
+            {
+                count++;
+            }
+        }
+         
+        catch(Exception ex)
+        {
+            count++;
+        }
+ 
+    }
+ 
+    void display()
+    {
+        System.out.println(count);
+    }
+ 
+    public static void main(String[] args) throws Exception
+    {
         Test obj = new Test();
-        obj.func();
- 
+        obj.A();
+        obj.display();
     }
 }
-  
