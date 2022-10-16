@@ -5,38 +5,16 @@ package geeksforgeeksquiza;
  *
  * @author User
  */
-abstract class demo
+
+class Test
 {
-    public int a;
-    demo()
+    public static void main (String[] args) 
     {
-        a = 10;
-    }
- 
-    abstract public void set();
-     
-    abstract final public void get();
- 
-}
- 
-class Test extends demo
-{
- 
-    public void set(int a)
-    {
-        this.a = a;
-    }
- 
-    final public void get()
-    {
-        System.out.println("a = " + a);
-    }
- 
-    public static void main(String[] args)
-    {
-        Test obj = new Test();
-        obj.set(20);
-        obj.get();
+        int arr1[] = {1, 2, 3};
+        int arr2[] = {1, 2, 3};
+        if (arr1.equals(arr2))
+            System.out.println("Same");
+        else
+            System.out.println("Not same");
     }
 }
- 
