@@ -13,7 +13,7 @@ public class P482_LaunchEvent implements Runnable {                             
     public P482_LaunchEvent(int start, String message)                          //Constructor accepts 2 parameters - when the program will start and message to be displayed
     
     {
-        this.start = start;
+        this.start = start;                                                     //this - refers to the current object within this method
         this.message = message;
     }
     @Override

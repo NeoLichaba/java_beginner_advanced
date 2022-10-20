@@ -93,9 +93,10 @@ public class ClickCounterExit extends Application {
     public void btnClose_Click() {
         Alert a = new Alert(Alert.AlertType.CONFIRMATION,
                 "Are you sure you want to quit?",
-                ButtonType.YES, ButtonType.NO);                                 //btn type to be selected by user
+                ButtonType.YES, ButtonType.NO);                                 //btn type to be selected by user included in alert dialog box
         Optional<ButtonType> confirm = a.showAndWait();                         //type Optional, with element ButtonType returns value from showAndWait method
-        if (confirm.isPresent() && confirm.get()
+        if (confirm.isPresent() && confirm.get()                                //isPresent from Optional class - determine value present in Optional Instance
+                                                                                //get method finds specific method of this class
                 == ButtonType.YES) {
             stage.close();                                                      //event handler calls primary stage to close the app
         }

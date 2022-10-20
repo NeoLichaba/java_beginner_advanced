@@ -15,7 +15,7 @@ import javafx.stage.Stage;
  * Scenes from ClickCounter and AddSubtract are combined
  * SceneSwitcher program run - displays ClickCounter scene
  * Switch scene - switches to AddSubtract scene. Call stage's setScene method to switch the scene
- * When a JavaFX application is launched, a stage known as the primary stage is automatically created. A reference to this stage is passed to the application’s start
+ * When a JavaFX application is launched, a stage known as the primary stage is automatically created. A reference to this stage is passed to the application’s start
    method via the primaryStage parameter:
    public void start(Stage primaryStage){}
  * you will need to access the primary stage outside of the scope of the start method. You can easily make this possible by defining a class field and 

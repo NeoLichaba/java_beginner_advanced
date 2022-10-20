@@ -15,7 +15,9 @@ import javafx.stage.Stage;
  * A lambda expression lets you create an anonymous class that implements a specific type of interface — a 
    functional interface
  * parameter types are separated from the method body by a new operator — the arrow operator
-
+ * No need to know the name of the interface being implemented
+ * when lambda expression used in call to setOnAction, compiler will deduce that lambda expression will implement EventHandler interface
+ * method body is an implementation of handle method
  * @author Neo
  */
 public class AddSubtract4 extends Application {
@@ -34,7 +36,7 @@ public class AddSubtract4 extends Application {
         btnAdd = new Button();
         btnAdd.setText("Add");
         btnAdd.setOnAction
-        (e                                                                      //lambda expression implements a functional interface
+        (e                                                                      //lambda expression implements a functional interface - only 1 functionality to exhibit
                                                                                 //single method accepts a single parameter, identified as e
                 ->                                                              //event handler added to Add button
                 {

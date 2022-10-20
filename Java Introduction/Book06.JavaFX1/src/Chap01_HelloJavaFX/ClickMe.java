@@ -27,7 +27,7 @@ import javafx.stage.Stage;                                                      
  *
  * @author User
  */
-public class ClickMe extends Application {
+public class ClickMe extends Application {                                      //extends java.application.Application class
 
     public static void main(String[] args) {
         launch(args);                                                           //Application class' launch method called - starts JavaFX app
@@ -36,12 +36,14 @@ public class ClickMe extends Application {
     Button btn;                                                                 //btn with Button type created
 
     @Override
-    public void start(Stage primaryStage) {                                     //start method accepts parameter on which app's UI will be displayed
+    public void start(Stage primaryStage) {                                     //start method called after launch of JavaFX application
+                                                                                //start method accepts parameter on which app's UI will be displayed
                                                                                 //when start method called, app passes through main stage (aka primary stage parameter)
+        //UI created within start method                                                                        
         // Create the button
         btn = new Button();                                                     //btn ctrl created called btn
         btn.setText("Click me please!");                                        //btn text set
-        btn.setOnAction(e -> buttonClick());                                    //method setOnAction called of btn class when btnClicked
+        btn.setOnAction(e -> buttonClick());                                    //method setOnAction called of btn class when btnClicked (event handler)
                                                                                 //e - object of ActionEvent
         // Add the button to a layout pane
         BorderPane pane = new BorderPane();                                     //instance of layout pane created - border pane

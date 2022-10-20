@@ -4,7 +4,7 @@ package Chap01_ProgrammingThreads;
 /* Listing 1.1 
  * Program demonstrates countdown of a clock from 20 to 0
  * Class extends Thread class. Instance of this class is created and its start method called (in CountDownApp)
- * @author User
+ * @author Neo
  */
 public class P479_CountDownClock extends Thread                                 
 {

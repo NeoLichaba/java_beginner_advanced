@@ -23,6 +23,33 @@ package Chap02_HandlingEvents;
  * EventHandler Interface
    ------------------------------
    void handle<T event> -  Called when an event occur
+
+ * Handling Events 
+   ----------------------------------
+   - Includes wiring classes and interfaces to create a program
+   - 3 steps to take to handle a JavaFX Event
+     1. Create an event source - generally as a private field and outside of the start method
+     2. Create an event handler - create an object that implements an interface - EventHandler. Object provides implementation of the handle method
+        Four ways to create an event handler:
+        • Add implements EventHandler to the program’s Application class and 
+        provide an implementation of the handle method.
+        You figure out how to use this technique in the section “Implementing the 
+        EventHandler Interface.”
+        • Create an inner class that implements EventHandler within the 
+        Application class.
+        You figure out how to use this technique in the section “Handling Events 
+        with Inner Classes.”
+        • Create an anonymous class that implements EventHandler.
+        I show you how to use this technique in the section “Handling Events with 
+        Anonymous Inner Classes.”
+        • Use a lambda expression to implement the handle method.
+        You read about how to use this technique in the section “Using Lambda 
+        Expressions to Handle Events.”
+     3. Register the event handler with the event source - method called whenever event occurs
+
+    Implementing the EventHandler Interface (refer to AddSubtract1 listing)
+    --------------------------------------------------------------------------
+    
    
 
 

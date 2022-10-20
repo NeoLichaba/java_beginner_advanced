@@ -5,11 +5,11 @@ package Chap03_DatabaseFor100USD;
  * @author Neo
  */
 public class P830_DBCreationScript {
-       drop database if exists movies;                                       //drop statment - deletes any exisiting DB with the same name
+drop database if exists movies;                                       //drop statment - deletes any exisiting DB with the same name
 create database movies;                                                         //new DB created named movies
 use movies;                                                                     //use = script statements that follow apply to movie DB
 create table movie (                                                            //create table statement creates table names movie with columns; primary key is id column
- id int not null auto_increment,                                                //id columm data type = int; not null = value to exist for every row; 
+id int not null auto_increment,                                                //id columm data type = int; not null = value to exist for every row; 
                                                                                 //auto-increment - DB server provides values
                                                                                 //Everytime new row added to the table, value for id column incremented                             
  title varchar(50),                                                             //varchar data type for title column

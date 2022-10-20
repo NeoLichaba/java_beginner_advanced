@@ -10,8 +10,8 @@ import javafx.scene.layout.HBox;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
-/**
- *
+/* Program demonstrates handling an event with inner classes - commonly used for event handlers
+ * 
  * @author Neo
  */
 public class AddSubtract2 extends Application {                                 //doesn't implement eventHandler
@@ -31,7 +31,7 @@ public class AddSubtract2 extends Application {                                 
         // Create the Add button
         btnAdd = new Button();
         btnAdd.setText("Add");
-        btnAdd.setOnAction(ch);                                                 //setOnAction - event handler for Add btn
+        btnAdd.setOnAction(ch);                                                 //setOnAction method called - accepts ch event handler for Add btn
         // Create the Subtract button
         btnSubtract = new Button();
         btnSubtract.setText("Subtract");                        

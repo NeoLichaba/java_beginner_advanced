@@ -8,8 +8,10 @@ import javafx.scene.control.*;
 import javafx.event.*;
 
 /* Listing 2.1, P587
- *
- * @author User
+ * Program demonstrates implementation of an EventHandler
+ * Displays a label and 2 buttons (Add/Subtract)
+ * Each time the user clicks, value is displayed
+ * @author Neo
  */
 public class AddSubtract1 extends Application
         implements EventHandler<ActionEvent>                                    //defines a handle method that will handle ActionEvent

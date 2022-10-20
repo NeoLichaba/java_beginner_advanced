@@ -102,6 +102,7 @@ public class PizzaOrder extends Application {
         btnCancel.setPrefWidth(80);
         btnCancel.setOnAction(e -> btnCancel_Click());
         HBox paneButtons = new HBox(10, btnOK, btnCancel);
+        
         // Create the GridPane layout →103                                      //grid pane layout is created
                                                                                 //padding,horizontal and vertical gaps are set to 10
         GridPane grid = new GridPane();

@@ -3,7 +3,7 @@ package Chap01_ProgrammingThreads;
 
 /**
  *
- * @author User
+ * @author Neo
  */
 public class P480_CountDownApp
 {
