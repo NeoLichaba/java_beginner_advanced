@@ -5,7 +5,8 @@ import java.nio.file.*;
 import java.nio.file.attribute.*;
 
 /* Listing 1.1
- *
+ * File Visitor used to walk a file tree
+ * Visiting every file in the tree and calling one or more methods defined - called a file visitor 
  * @author Neo
  */
 public class P796_FileVisitorDemo {

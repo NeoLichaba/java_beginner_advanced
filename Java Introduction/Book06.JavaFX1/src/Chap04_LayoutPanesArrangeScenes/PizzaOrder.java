@@ -19,30 +19,30 @@ import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 
 /* Program demonstrates a pizza order application
- *
+ * Listing 4.1, P652
  * @author Neo
  */
 public class PizzaOrder extends Application {
 
     public static void main(String[] args) {
-        launch(args);
+        launch(args);                                                           //instance of Pizza Order created, subsequently calling the start method
     }
-    Stage stage;
-    TextField txtName;
+    Stage stage;                                                                //all objects of our application are contained. Represented by Stage class
+    TextField txtName;                                                          //components of the order form declared 
     TextField txtPhone;
     TextField txtAddress;
-    RadioButton rdoSmall;
+    RadioButton rdoSmall;                                                       //Radio buttons only one can be selected at a time
     RadioButton rdoMedium;
     RadioButton rdoLarge;
     RadioButton rdoThin;
     RadioButton rdoThick;
-    CheckBox chkPepperoni;
+    CheckBox chkPepperoni;                                                      //Checkbox control for user to check/clear. created - checked, unchecked and undefined
     CheckBox chkMushrooms;
     CheckBox chkAnchovies;
 
     @Override
-    public void start(Stage primaryStage) {
-        stage = primaryStage;
+    public void start(Stage primaryStage) {                                     //start method passes stage object created
+        stage = primaryStage;                                                   //primary stage created by the Stage class
         // Create the name label and text field →32                             //label and text field created for customer name
         Label lblName = new Label("Name:");
         txtName = new TextField();
@@ -63,14 +63,15 @@ public class PizzaOrder extends Application {
         txtAddress.setMinWidth(100);
         txtAddress.setPrefWidth(200);
         txtAddress.setMaxWidth(300);
-        txtAddress.setPromptText("Enter the address here");
+        txtAddress.setPromptText("Enter the address here");                     //field's prompt value
         // Create the size pane →56                                             //label and 3 radio buttons created for pizza's size
         Label lblSize = new Label("Size");
-        rdoSmall = new RadioButton("Small");
+        rdoSmall = new RadioButton("Small"); 
         rdoMedium = new RadioButton("Medium");
         rdoLarge = new RadioButton("Large");
         rdoMedium.setSelected(true);                                            //checks the check box if parameter is true, unchecks if false
-        ToggleGroup groupSize = new ToggleGroup();                              //toggle group to group radio buttons together instantiated with ToggleGroup constructor called
+        ToggleGroup groupSize = new ToggleGroup();                              //Toggle group class contains ref to all toggles. Only 1 Toggle within a a group can be selected at any time
+                                                                                //toggle group to group radio buttons together instantiated with ToggleGroup constructor called
         rdoSmall.setToggleGroup(groupSize);                                     //toggle group for each radio button  set
         rdoMedium.setToggleGroup(groupSize);
         rdoLarge.setToggleGroup(groupSize);
@@ -97,11 +98,11 @@ public class PizzaOrder extends Application {
         // Create the buttons →92                                               //OK and Cancel button created and added to HBox paneButton
         Button btnOK = new Button("OK");
         btnOK.setPrefWidth(80);
-        btnOK.setOnAction(e -> btnOK_Click());
+        btnOK.setOnAction(e -> btnOK_Click());                                  //setOnAction method passes event handler which calls on btnOK_Click method
         Button btnCancel = new Button("Cancel");
         btnCancel.setPrefWidth(80);
         btnCancel.setOnAction(e -> btnCancel_Click());
-        HBox paneButtons = new HBox(10, btnOK, btnCancel);
+        HBox paneButtons = new HBox(10, btnOK, btnCancel);                      //HBox created with specified spacing and the child nodes added
         
         // Create the GridPane layout →103                                      //grid pane layout is created
                                                                                 //padding,horizontal and vertical gaps are set to 10
@@ -110,34 +111,34 @@ public class PizzaOrder extends Application {
                                                                                 //object type Insets passed received in parameter - represents size of padding
                                                                                 //for top, right, bottom and left edge of an object.
                                                                                 //uniform madding set
-        grid.setHgap(10);
-        grid.setVgap(10);
-        grid.setMinWidth(500);
-        grid.setPrefWidth(500);
-        grid.setMaxWidth(800);
+        grid.setHgap(10);                                                       //gaps between columns set
+        grid.setVgap(10);                                                       //gap between rows appears
+        grid.setMinWidth(500);                                                  //min width of grid pane
+        grid.setPrefWidth(500);                                                 //preferred width of grid pane
+        grid.setMaxWidth(800);                                                  //max width
         // Add the nodes to the pane →112                                       //nodes are added to the pane
         grid.addRow(0, lblName, txtName);                                       //name added to row 0
         grid.addRow(1, lblPhone, txtPhone);                                     //phoneNumber added to row 1
         grid.addRow(2, lblAddress, txtAddress);                                 //address added to row 2
         grid.addRow(3, paneSize, paneCrust, paneToppings);                      //size, crust and toppings added to row 3
         grid.add(paneButtons, 2, 4);                                            //Hbox contains buttons added to column 2 of row 4
-        // Set alignments and spanning →119                                     
-        grid.setHalignment(lblName, HPos.RIGHT);
+        // Set alignments and spanning →119                                     //layout within our grid pane constructed
+        grid.setHalignment(lblName, HPos.RIGHT);                                //horizontal alignment for the node set - lblName placed right
         grid.setHalignment(lblPhone, HPos.RIGHT);
         grid.setHalignment(lblAddress, HPos.RIGHT);
-        grid.setColumnSpan(txtName, 2);
+        grid.setColumnSpan(txtName, 2);                                         //column span for node (txtName) set. Specify the number of columns node should span
         grid.setColumnSpan(txtPhone, 2);
         grid.setColumnSpan(txtAddress, 2);
         // Set column widths →127                                               //columns constraints created, column widths evenly distributed
-        ColumnConstraints col1 = new ColumnConstraints();
-        col1.setPercentWidth(33);
+        ColumnConstraints col1 = new ColumnConstraints();                       //constraint for each column created
+        col1.setPercentWidth(33);                                               //width set as % of the total width of grid pane
         ColumnConstraints col2 = new ColumnConstraints();
         col2.setPercentWidth(33);
         ColumnConstraints col3 = new ColumnConstraints();
-        col3.setPercentWidth(33);
-        grid.getColumnConstraints().addAll(col1, col2, col3);
+        col3.setPercentWidth(33);                                               //each column fills 33% of the grid
+        grid.getColumnConstraints().addAll(col1, col2, col3);                   //to the grid, get all the Column constraints and addAll columns
         // Create the scene and the stage →136                                  //scene is created and stage displayed
-        Scene scene = new Scene(grid);
+        Scene scene = new Scene(grid);                                          //container for all content
         primaryStage.setScene(scene);
         primaryStage.setTitle("Pizza Order");
         primaryStage.setMinWidth(500);
@@ -171,8 +172,8 @@ public class PizzaOrder extends Application {
             msg += "thick crust pizza with ";
         }
         // Add the toppings
-        String toppings = "";
-        toppings = buildToppings(chkPepperoni, toppings);
+        String toppings = "";                                                   //toppings initialised as an empty string
+        toppings = buildToppings(chkPepperoni, toppings);                       //toppings initilaised, accepts different type of topping from topping
         toppings = buildToppings(chkMushrooms, toppings);
         toppings = buildToppings(chkAnchovies, toppings);
         if (toppings.equals("")) {
@@ -182,9 +183,9 @@ public class PizzaOrder extends Application {
                     + toppings;
         }
         // Display the message
-        Alert a = new Alert(Alert.AlertType.INFORMATION, msg);
+        Alert a = new Alert(Alert.AlertType.INFORMATION, msg);                  //Alert dialog box with the order details displayed
         a.setTitle("Order Details");
-        a.showAndWait();
+        a.showAndWait();                                                        //showAndWait method called - determines which btns user called
     }
 
     public String buildToppings(CheckBox chk, String msg) //→187                //helper method assists in construction of message string
