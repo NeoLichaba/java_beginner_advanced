@@ -14,9 +14,9 @@ public class P780_CreatingAFile {
    
   public static void main(String[] args) {
     try {
-      File myObj = new File("C:\\Users\\User\\OneDrive\\Desktop\\Code College_2022\\6.Java\\Java Projects\\Java Introduction\\Book08.FilesAndDatabases\\music.txt");
-      if (myObj.createNewFile()) {                                              //createNewFile method used to create file; returns a boolean
-        System.out.println("File created: " + myObj.getName());
+      File f = new File("C:\\Users\\User\\OneDrive\\Desktop\\Code College_2022\\6.Java\\Java Projects\\Java Introduction\\Book08.FilesAndDatabases\\music.txt");
+      if (f.createNewFile()) {                                              //createNewFile method used to create file; returns a boolean
+        System.out.println("File created: " + f.getName());
       } else {
         System.out.println("File already exists.");                             //msg returned if file already exists
       }
