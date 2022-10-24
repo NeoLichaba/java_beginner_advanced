@@ -20,7 +20,7 @@ package Chap03_UsingRecursion;
  * Recursion in this program ends when listDirectories method is passed a directory that doesn't have any subdirectories
  * @author Neo
  */
-import java.io.File; //→1                                                       //File class
+import java.io.File;                                                             //File class
 import java.util.Scanner;
 
 public class P527_DirList {
@@ -32,7 +32,7 @@ public class P527_DirList {
                 "Welcome to the Directory Lister");
         do {
             System.out.print("\nEnter a path: ");
-            String path = sc.nextLine();// →15                                  
+            String path = sc.nextLine();                                  
             File dir = new File(path);                                          //path name passed to the File class constructor to create a new File object                                         
             if (!dir.exists() || !dir.isDirectory())                            //exists and isDirectory methods are called to make sure that the path entered by user exists and points
                                                                                 //to a directory than a file
