@@ -42,7 +42,7 @@ public class PizzaOrder extends Application {
     public void start(Stage primaryStage) {
         stage = primaryStage;
         // ----- Create the top pane -----
-        Text textHeading = new Text("Order Your Pizza Now!");                   //
+        Text textHeading = new Text("Order Your Pizza Now!");                   
         textHeading.setFont(new Font(20));
         HBox paneTop = new HBox(textHeading);
         paneTop.setPadding(new Insets(20, 10, 20, 10));                         //paneTop contains the title, displayed at the top of the border pane
